@@ -6,7 +6,7 @@ function initPage() {
     { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: 'Find where the mines are' },
     { id: 'touchNum', name: 'Touch The Nums', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
     { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
-    { id: 'calculator', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
+    { id: 'calc', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
     { id: 'chess', name: 'Chess', title: 'chess', decs: 'chess game' }
     ]
     render();

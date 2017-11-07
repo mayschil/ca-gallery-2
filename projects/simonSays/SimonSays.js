@@ -4,6 +4,8 @@ var colors = ['tomato', 'orange', 'dodgerBlue', 'slateBlue', 'violet'];
 var colorSamples = [];
 var click = 0;
 var turn = 0;
+var timeoutID;
+var timeoutID2;
 
 function startGame() {
 
@@ -25,50 +27,39 @@ function createColors() {
 function randColors() {
 
     turn++;
-            var timeoutID = setTimeout(function () {
-    for (var i = 0; i < turn; i++) {
+    timeoutID = setTimeout(function () {
+        for (var i = 0; i < turn; i++) {
             var temp = Math.floor(Math.random() * 4, 0);
             colorSamples[i] = colors[temp];
+            console.log('colorSamples[i]', colorSamples[i])
             var elcolor = document.querySelector('.' + colorSamples[i]);
-            var timeoutID2 = setTimeout(function () {
-                
-                elcolor.classList.add('chosenColor');
-
-            }, 1000);
-       
-    }
-}, 1000);
-    var length = colorSamples.length
-    click = length;
+            elcolor.classList.add('chosenColor');
+        }
+    }, 1000);
 }
 
+function cellClicked(elCell) {
 
-    function cellClicked(elCell) {
+    clearTimeout(timeoutID);
+    console.log('elCell', elCell)
+    var str = elCell.classList.value;
+    var vals = str.split(" ");
+    var color = colorSamples.splice(0, 1);
+    if (vals[1] === color[0]) console.log('YOU ARE CORRECT');
+    else console.log('YOU ARE WRONG');
 
-        var str = elCell.classList.value;
-        var vals = str.split(" ");
-       
-        if (vals[1] === (colorSamples[colorSamples.length - click])) {
-            click--;
-            //right chouce of color
-            console.log('YOU ARE CORRECT');
-        }
-        //wrong choice of color
-        else console.log('YOU ARE WRONG');
-        //all colors were correctly discovered
-        if (click === 0) {
-            var elHead = document.querySelector('h1');
-            elHead.innerText = 'SIMON SAYS';
-            randColors();
-        }
-    }
-
-    function restart() {
-        colorSamples = [];
-        click = 0;
-        turn = 0;
+    if (colorSamples.length === 0) {
+        console.log('YOU ARE CORRECT IN ALL TIMES');
         randColors();
-        var elHead = document.querySelector('h1');
-        elHead.innerText = 'SIMON SAYS';
     }
+}
+
+function restart() {
+    colorSamples = [];
+    click = 0;
+    turn = 0;
+    randColors();
+    var elHead = document.querySelector('h1');
+    elHead.innerText = 'SIMON SAYS';
+}
 

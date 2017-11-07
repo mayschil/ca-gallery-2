@@ -92,17 +92,19 @@ var str='';
 str+='<form>'
 str+='<div class="form-group">'
 str+='<label for="exampleInputEmail1">Email address</label>'
-str+='<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">'
+str+='<input id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">'
 str+='<small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else.</small>'
 str+=' </div>'
-str+='<div class="form-group">'
-str+='<label for="exampleInputSubject">Subject</label>'
-str+='<input id="txt" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Body">'
 
 str+='<div class="form-group">'
-str+='<label for="exampleInputText">Text</label>'
-str+='<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Text Body">'
-str+='</div>'
+str+='<label for="exampleInputSubject">Subject</label>'
+str+='<input id="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">'
+
+str+=' <div class="form-group">'
+str+='   <label class="col-form-label" for="formGroupExampleInput">Body</label>'
+str+='  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Body">'
+str+=' </div>'
+
 str+='<div class="form-check">'
 str+='<label class="form-check-label">'
 str+=' <input type="checkbox" class="form-check-input">'
@@ -112,12 +114,22 @@ str+='</div>'
 str+='<button type="button" class="btn btn-primary" onclick="submitMail()">Submit</button>'
 str+='</form>'
 
-    var elContact = document.querySelector('#contact');
-    elContact.innerHTML = str;
-
+var elContact = document.querySelector('#contact');
+elContact.innerHTML = str;
 }
 
-function submitMail(){
 
-    location = "https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&b ody=BODY ";
+
+
+function submitMail(){
+    var elMail = document.querySelector('#email');
+    var mail = elMail.value;
+    console.log(mail)
+    var elSubject = document.querySelector('#subject');
+    var subject = elSubject.value;
+    console.log(subject)
+    var elTxt = document.querySelector('#formGroupExampleInput');
+    var text = elTxt.value;
+    console.log(text)
+    location = 'https://mail.google.com/mail/?view=cm&fs=1&to='+mail+'&su='+subject+'&body='+text+' ';
 }

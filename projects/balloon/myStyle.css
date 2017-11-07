@@ -7,23 +7,26 @@ body{
 
 
 .balloons{
-    width: 100px;
-    height:100px;
+    width: 530px;
+    height:530px;
     border-radius:25px;
     position: absolute;
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
     bottom:0px; 
 }
 
 .balloon1{
-    background-color: blueviolet;
+
+background-image: url("colors.jpg");
+    /* background-color: blueviolet; */
     margin-left: 150px; 
        
 }
 
 .balloon2{
-    background-color: aqua;
-    margin-left: 300px; 
+    background-image: url("colors.jpg");
+    /* background-color: aqua; */
+    margin-left: 700px; 
     
 }
 

@@ -1,0 +1,42 @@
+
+body{
+
+    background-image:  url('blue-clouds-day-fluffy-53594.jpeg');
+    background-size: cover;
+}
+
+
+.balloons{
+    width: 100px;
+    height:100px;
+    border-radius:25px;
+    position: absolute;
+    margin-bottom: 0px;
+    bottom:0px; 
+}
+
+.balloon1{
+    background-color: blueviolet;
+    margin-left: 150px; 
+       
+}
+
+.balloon2{
+    background-color: aqua;
+    margin-left: 300px; 
+    
+}
+
+.hidden {
+    visibility: hidden;    
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }
+
+  .button1{
+    margin-bottom:5px;
+  }
+
+  .button2{
+    margin-bottom:5px;
+  }

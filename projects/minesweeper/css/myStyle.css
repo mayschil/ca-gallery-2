@@ -1,0 +1,68 @@
+
+.gameBoard td {
+    width: 50px;
+    height:50px;
+    text-align: center;
+}
+
+.mark0 {
+    background-color:grey;
+    color: grey;
+}
+.mark1 {
+    background-color:grey;
+    color: #4713E4;
+}
+.mark2 {
+    background-color:grey;
+    color: #003422;
+}
+.mark3 {
+    background-color:grey;
+    color: #F44517;
+}
+.mark4 {
+    background-color:grey;
+    color: #070330;
+}
+.mark5 {
+    background-color:grey;
+    color: #545083;
+}
+.markBomb{
+    background-color:grey;
+}
+
+.cover{
+    background-color:#83BA76;
+    width: 30px;
+    height:30px;
+    text-align: center;
+}
+
+button{
+
+    margin :3px;
+    height: 40px;
+}
+
+.timer{
+  font-size: 20px;
+  margin: 5px;
+}
+
+.maybeleBomb{
+    border: 2px solid #470000;
+}
+
+h1{
+    margin:10px;
+}
+
+table{
+    margin: 5px;
+}
+
+.marked{
+    background-color: lightblue;
+}

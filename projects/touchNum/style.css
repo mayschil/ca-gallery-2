@@ -1,0 +1,82 @@
+body {
+
+background: #D4BAB0;
+
+}
+
+h1{
+    margin: 20px;
+    font-size: 50px;
+}
+
+.nums {
+    width: 100px;
+    height: 90px;
+    margin: 10px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.num1 {
+    background: #923C7E;
+ }
+  .num2 {
+     background: #923C7E;
+ }
+ .num3 {
+    background:  #923C7E;
+ }
+ .num4 {
+     background:  #923C7E;
+ }
+ .num5 {
+    background:  #923C7E;
+ }
+ .num6 {
+     background:  #923C7E;
+ }
+ .num7 {
+    background:  #923C7E;
+ }
+ .num8 {
+     background:  #923C7E;
+ }
+ .num9 {
+    background:  #923C7E;
+ }
+ .num10 {
+     background:  #923C7E;
+ }
+ .num11 {
+    background:  #923C7E;
+ }
+ .num12 {
+     background:  #923C7E;
+ }
+ .num13 {
+    background:  #923C7E;
+ }
+ .num14 {
+     background:  #923C7E;
+ }
+ .num15 {
+    background:  #923C7E;
+ }
+ .num16 {
+     background:  #923C7E;
+ }
+        
+.numClicked {
+    background:  #BC88B0;
+}
+
+.time {
+    color : black;
+    margin: 10px;
+}
+
+.button{
+    height: 50px;
+    width: 90px;
+    margin: 10px;
+}

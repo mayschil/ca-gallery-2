@@ -1,0 +1,67 @@
+
+
+.smallBox {
+    background: #070707;
+    padding:10px;
+    height: 300px;    
+}
+
+body {
+    background: pink;
+}
+
+h1{
+    color:pink;
+    text-align: center;
+}
+
+.title{
+    display: inline;
+    padding-left:650px;
+    position: relative;
+    top:100px;
+    right:50px;
+    
+}
+
+ .name{
+     margin-top: 30px;
+    color: white;
+    float:right;
+    font-size: 170% 
+      
+}
+
+.second-title{
+    color:black;
+    position: relative;
+    top:100px;
+    right:50px;
+}
+.third-title{
+    color:black;
+    position: relative;
+    top:100px;
+    right:50px;
+    left:650px;
+}
+
+.numbers{
+    color:#C33232;
+   
+}
+
+.button{
+    color:#420665;
+    position: relative;
+    top:100px;
+    right:50px;
+    left:670px;
+    font-size: 24px;    
+}
+
+.answer{
+    color: white;
+    margin-right: 100px;
+    margin-top: 140px;
+}

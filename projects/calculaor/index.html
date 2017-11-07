@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td class="screen" colspan="5"></td>
+        </tr>
+        <tr>
+            <td> <button onclick="clearMemory(this)">MC</button> </td>
+            <td> <button onclick="addMemory(this)">M+</button></td>
+            <td> <button onclick="removeMemory(this)">M-</button> </td>
+            <td> <button onclick="pullData(this)">MRC</button></td>
+            <td> <button onclick="clearMemory(this)">MS</button> </td>
+
+        </tr>
+        <tr>
+            <td> <button onclick="deleteNum()"> < </button></td>
+            <td> <button onclick="clearNum()">CE</button> </td>
+            <td> <button onclick="clearNum()">C</button> </td>
+            <td><button onclick="pow()">^</button> </td>
+            <td><button onclick="root()">^-</button> </td>
+        </tr>
+        <tr>
+            <td> <button class="num-7" onclick="addDigit(this)">7</button></td>
+            <td> <button class="num-8" onclick="addDigit(this)">8</button></td>
+            <td> <button class="num-9" onclick="addDigit(this)">9</button></td>
+            <td> <button onclick="div()">/</button> </td>
+            <td> <button onclick="div()">%</button></td>
+        </tr>
+        <tr>
+            <td> <button class="num-4" onclick="addDigit(this)">4</button></td>
+            <td> <button class="num-5" onclick="addDigit(this)">5</button></td>
+            <td> <button class="num-6" onclick="addDigit(this)">6</button> </td>
+            <td> <button onclick="mult()">*</button> </td>
+            <td> <button onclick="mult()">1/x</button></td>
+        </tr>
+        <tr>
+            <td> <button class="num-1" onclick="addDigit(this)">1</button>
+            </td>
+            <td> <button class="num-2" onclick="addDigit(this)">2</button>
+            </td>
+            <td> <button class="num-3" onclick="addDigit(this)">3</button>
+            </td>
+            <td> <button onclick="subs()">-</button>
+            </td>
+           
+            <td rowspan="3"> <button class="equal" onclick="equal()">=</button>
+            </td>
+           
+        </tr>
+        <tr>
+            <td colspan="2"> <button class="num-0" data-num="1" onclick="addDigit(this)">0</button></td>
+            <td> <button class="num-0" data-num="1" onclick="decP()">.</button></td>
+            <td> <button onclick="sum()">+</button>
+            </td>
+           
+        </tr>
+
+
+    </table>
+
+
+    <form>
+        <input type="radio" name="base" value="Hex" onclick="hex()"> Hex<br>
+        <input type="radio" name="base" value="Dec" onclick="dec()"> Dec<br>
+        <input type="radio" name="base" value="Oct" onclick="oct()"> Oct <br>
+        <input type="radio" name="base" value="Bin" onclick="bin()"> Bin
+
+    </form>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>

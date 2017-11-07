@@ -23,7 +23,7 @@ function getGalleryHtml() {
     for (var i = 0; i < gProj.length; i++) {
         var str = '';
         var sum = i + 1;
-        str += '<div class="col-md-4 col-sm-6 portfolio-item">'
+        str += '<div class="col-md-4 col-sm-6 portfolio-item">ca-gallery-2'
         str += ' <a class="portfolio-link" data-toggle="modal" href="#portfolioModal' + sum + '"> '
         str += ' <div class="portfolio-hover"> '
         str += ' <div class="portfolio-hover-content"> '

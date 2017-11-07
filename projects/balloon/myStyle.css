@@ -12,7 +12,7 @@ body{
     border-radius:25px;
     position: absolute;
     /* margin-bottom: 0px; */
-    bottom:0px; 
+    bottom:-650px; 
 }
 
 .balloon1{
@@ -28,6 +28,18 @@ background-image: url("colors.jpg");
     /* background-color: aqua; */
     margin-left: 700px; 
     
+}
+
+.balloon3{
+    background-image: url("red.jpg");
+    /* background-color: aqua; */
+    margin-left: 300px;  
+}
+
+.balloon4{
+    background-image: url("red.jpg");
+    /* background-color: aqua; */
+    margin-left: 1000px;  
 }
 
 .hidden {

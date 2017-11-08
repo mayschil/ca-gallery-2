@@ -7,8 +7,8 @@ function initPage() {
     { id: 'touchNum', name: 'Touch The Nums', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
     { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
     { id: 'calc', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
-    { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' }
-    ]
+    { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },
+    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' }]
     render();
 }
 

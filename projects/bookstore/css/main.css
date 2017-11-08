@@ -39,9 +39,26 @@ body{
 .row{
     /* margin-top: 100px; */
     margin:80px;
+    margin-left: 230px;
 }
 
 .container{
 
     background-color: rgba(222, 184, 135, 0.4);
+}
+ .btn-primary{
+margin:5px;
+margin-top: 0px;
+}
+
+.fa-thumbs-o-up{
+color:green;
+margin:5px;
+font-size: 30px;
+}
+.fa-thumbs-o-down{
+    color:red;
+    margin:5px;
+    font-size: 30px;
+    
 }

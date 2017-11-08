@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap!</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+
+<body  onload=initStore()>
+    <!-- <button onclick="readAndAddNewBook()" type="button" class="btn btn-secondary">Add Book</button> -->
+    <!-- <button onclick="readAndAddNewBook()" type="button" class="btn btn-secondary">HERE ARE MY BOOKS</button> -->
+<div class="container">
+
+    <h1 onclick="sortBooks()"><bold>My Bookstore</bold> </h1>
+    <h4 onclick="sortName()">SORT BY NAME</h4>
+    <h4 onclick="sortPrice()">SORT BY PRICE</h4>
+    
+    
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <!-- <input type="checkbox" aria-label="Checkbox for following text input"> -->
+                    Title:
+                </span>
+                <input id="title" class="box" type="text" class="form-control" aria-label="Text input with checkbox">
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <!-- <input type="radio" aria-label="Radio button for following text input"> -->
+                    Price:              
+                </span>
+                <input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="input-group">
+                <!-- <span class="input-group-addon">
+                    
+                </span> -->
+                <button onclick="newBook()"type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+    
+    <table class="table table-white">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col" class="price">Price</th>
+                <th scope="col" class="action">Action</th>
+            </tr>
+        </thead>
+        <tbody id="booksList">
+            
+        </tbody>
+    </table>
+    
+    <nav class="addData" aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li onclick="renderPage(1)" class="page-item"><a class="page-link" href="#">1</a></li>
+            <li onclick="renderPage(2)" class="page-item"><a class="page-link" href="#">2</a></li>
+            <li onclick="renderPage(3)" class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+    
+    
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="js/bookStore.js"></script>
+    <script src="js/bookStore.js"></script>
+    
+</div>
+</body>
+
+</html>

@@ -1,14 +1,15 @@
 button{
-    background-color: lightblue;
+    background-image: url("wood.jpg");
 }
 
 .screen{
-    background-color:honeydew;
-   width:400px;
-   height: 80px;
+    background-image:url("wood.jpg");
+    width:350px;
+   height: 70px;
    margin: 5px;
-    border:black;
     font-size: 50px;
+    filter: brightness(120%);
+    padding: 10px;
 
 }
 
@@ -25,9 +26,10 @@ td > button{
 }
 
 table{
-    border-style: solid;
-    border-width: 5px;
-    border-color: rosybrown;
-background-color: grey;
-/* height:70%; */
+
+background-image:url("wood3.jpg");
+border-image: url("wood3.jpg");
+border:20px;
+margin-left:520px;
+margin-top:200px;
 }

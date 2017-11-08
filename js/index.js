@@ -8,7 +8,7 @@ function initPage() {
     { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
     { id: 'calc', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
     { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },
-    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' }]
+    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' }];
     render();
 }
 
@@ -58,14 +58,12 @@ function getModalHtml() {
         str += '  <div class="modal-body">'
         str += '   <!-- Project Details Go Here -->'
         str += '   <h2>' + gProj[i].name + '</h2>'
-        //    str+='   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>'
         str += '  <img class="img-fluid" src="img/portfolio/' + gProj[i].id + '-full.jpg" >'
         str += '   <p>' + gProj[i].decs + '</p>'
         str += '   <ul class="list-inline">'
         str += '     <li>Date: January 2017</li>'
         str += '     <li>Client: Threads</li>'
         str += '     <li>Category: Illustration</li>'
-        console.log(gProj[i].id)
         str += '     <li ><a href="projects/'+ gProj[i].id +'/index.html">Press and play</a></li>'
         str += '   </ul>'
         str += '   <button class="btn btn-primary" data-dismiss="modal" type="button">'
@@ -80,6 +78,7 @@ function getModalHtml() {
 
         var sum = i + 1;
         var elMat = document.querySelector('#portfolioModal' + sum + '');
+        console.log(elMat)
         elMat.innerHTML += str;
     }
 

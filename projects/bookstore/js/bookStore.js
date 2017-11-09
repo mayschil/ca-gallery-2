@@ -1,17 +1,19 @@
 
 var gBooks = [
-    { Id: 0, Title: 'Obama: An Intimate Portrait ', Price: 28.99,
-    description:'Relive the extraordinary Presidency of Barack Obama through White House photographer Pete Souzas behind the scenes images and stories some published here for the first time--with a foreword from the President himself', Rate: 0 },
+    {
+        Id: 1, Title: 'Obama: An Intimate Portrait ', Price: 28.99,
+        description: 'Relive the extraordinary Presidency of Barack Obama through White House photographer Pete Souzas behind the scenes images and stories some published here for the first time--with a foreword from the President himself', Rate: 0
+    },
 
 
-{ Id: 1, Title: 'Milk and Vine: Inspirational Quotes From Classic Vines ', Price: 6.65,  description:'Parodying the popular poetry book Milk and Honey, Milk and Vine offers a beautifully designed reflection of the thought-provoking ideas that spread through this amazing platform', Rate: 0 },
-{ Id: 2, Title: 'The Getaway (Diary of a Wimpy Kid Book 12)', Price: 4,description:'With the cold weather and the stress of the approaching holiday season, the Heffleys decide to escape to a tropical island resort for some much-needed rest and relaxation. A few days in paradise should do wonders for Greg and his frazzled family.', Rate: 0 },
-{ Id: 3, Title: 'The Wisdom of Sundays: Life-Changing Insights from Super Soul Conversations', Price: 16,description:'Oprah Winfrey says Super Soul Sunday is the television show she was born to do. “I see it as an offering,” she explains. “If you want to be more fully present and live your life with a wide-open heart, this is the place to come to.”', Rate: 0 },
-{ Id: 4, Title: 'Wonder', Price: 10,description:'SOON TO BE A MAJOR MOTION PICTURE STARRING JULIA ROBERTS, OWEN WILSON, AND JACOB TREMBLAY!', Rate: 0 },
-{ Id: 5, Title: 'Hacks: The Inside Story of the Break-ins and Breakdowns That Put Donald Trump in the White House', Price: 7,description:'From Donna Brazile, former DNC chair and legendary political operative, an explosive and revealing new look at the 2016 election: the first insider account of the Russian hacking of the DNC and the missteps by the Clinton campaign and Obama administration that enabled a Trump victory.', Rate: 0 },
-{ Id: 6, Title: 'Leonardo da Vinci', Price: 17,description:'Based on thousands of pages from Leonardo’s astonishing notebooks and new discoveries about his life and work, Walter Isaacson weaves a narrative that connects his art to his science. He shows how Leonardo’s genius was based on skills we can improve in ourselves, such as passionate curiosity, careful observation, and an imagination so playful that it flirted with fantasy.', Rate: 0 },
-{ Id: 7, Title: 'The Sun and Her Flowers', Price: 13,description:'From Rupi Kaur, the #1 New York Times bestselling author of milk and honey, comes her long-awaited second collection of poetry.  A vibrant and transcendent journey about growth and healing. Ancestry and honoring one’s roots. Expatriation and rising up to find a home within yourself.', Rate: 0 },
-{ Id: 8, Title: 'Medical Medium Thyroid Healing: The Truth behind Hashimoto, Graves Insomnia Hypothyroidism Thyroid Nodules & Epstein-Barr', Price: 11,description:'If you’re an avid reader of health books and articles and you think you’re aware of the latest thyroid health information, you’re going to be more than surprised—maybe even shocked—at how much more there is to know. Thyroid Healing is like nothing you have read or heard, and it will bring you true comprehension of the undiscovered inner mechanics of our thyroids for the first time ever', Rate: 0 }];
+    { Id: 2, Title: 'Milk and Vine: Inspirational Quotes From Classic Vines ', Price: 6.65, description: 'Parodying the popular poetry book Milk and Honey, Milk and Vine offers a beautifully designed reflection of the thought-provoking ideas that spread through this amazing platform', Rate: 0 },
+    { Id: 3, Title: 'The Getaway (Diary of a Wimpy Kid Book 12)', Price: 4, description: 'With the cold weather and the stress of the approaching holiday season, the Heffleys decide to escape to a tropical island resort for some much-needed rest and relaxation. A few days in paradise should do wonders for Greg and his frazzled family.', Rate: 0 },
+    { Id: 4, Title: 'The Wisdom of Sundays: Life-Changing Insights from Super Soul Conversations', Price: 16, description: 'Oprah Winfrey says Super Soul Sunday is the television show she was born to do. “I see it as an offering,” she explains. “If you want to be more fully present and live your life with a wide-open heart, this is the place to come to.”', Rate: 0 },
+    { Id: 5, Title: 'Wonder', Price: 10, description: 'SOON TO BE A MAJOR MOTION PICTURE STARRING JULIA ROBERTS, OWEN WILSON, AND JACOB TREMBLAY!', Rate: 0 },
+    { Id: 6, Title: 'Hacks: The Inside Story of the Break-ins and Breakdowns That Put Donald Trump in the White House', Price: 7, description: 'From Donna Brazile, former DNC chair and legendary political operative, an explosive and revealing new look at the 2016 election: the first insider account of the Russian hacking of the DNC and the missteps by the Clinton campaign and Obama administration that enabled a Trump victory.', Rate: 0 },
+    { Id: 7, Title: 'Leonardo da Vinci', Price: 17, description: 'Based on thousands of pages from Leonardo’s astonishing notebooks and new discoveries about his life and work, Walter Isaacson weaves a narrative that connects his art to his science. He shows how Leonardo’s genius was based on skills we can improve in ourselves, such as passionate curiosity, careful observation, and an imagination so playful that it flirted with fantasy.', Rate: 0 },
+    { Id: 8, Title: 'The Sun and Her Flowers', Price: 13, description: 'From Rupi Kaur, the #1 New York Times bestselling author of milk and honey, comes her long-awaited second collection of poetry.  A vibrant and transcendent journey about growth and healing. Ancestry and honoring one’s roots. Expatriation and rising up to find a home within yourself.', Rate: 0 },
+    { Id: 9, Title: 'Medical Medium Thyroid Healing: The Truth behind Hashimoto, Graves Insomnia Hypothyroidism Thyroid Nodules & Epstein-Barr', Price: 11, description: 'If you’re an avid reader of health books and articles and you think you’re aware of the latest thyroid health information, you’re going to be more than surprised—maybe even shocked—at how much more there is to know. Thyroid Healing is like nothing you have read or heard, and it will bring you true comprehension of the undiscovered inner mechanics of our thyroids for the first time ever', Rate: 0 }];
 
 var gCurrPage = 1;
 
@@ -99,7 +101,6 @@ function updateBook(bookId, bookPrice) {
 function bookModal(id) {
 
     var str = '';
-    // str += ' <i class="fa fa-thumbs-down" aria-hidden="true"></i>'
     str += ' <div class="modal-dialog" role="document">'
     str += '<div class="modal-content">'
     str += '    <div class="modal-header">'
@@ -110,15 +111,13 @@ function bookModal(id) {
     str += '   </div>'
     str += '   <div class="modal-body">'
     str += '       <h1>' + gBooks[id].Title + '</h1>'
-    str += '       <p>'+gBooks[id].description+'</p>'
+    str += '<img src="img/' + gBooks[id].Id + '.jpg">'
+    str += '       <p>' + gBooks[id].description + '</p>'
     str += ' <p id="rate" >Rating: ' + gBooks[id].Rate + '</p>'
     str += '<i onclick=addRate(' + id + ') class="fa fa-thumbs-o-up" aria-hidden="true"></i>'
     str += '<i onclick=subRate(' + id + ') class="fa fa-thumbs-o-down" aria-hidden="true"></i>'
     str += '   </div>'
     str += '   <div class="modal-footer">'
-
-    // str += '       <button onclick="addRate(' + id + ')" type="button" class="btn btn-success" >Thumb Up</button>'
-    // str += '       <button onclick="subRate(' + id + ')" type="button" class="btn btn-danger">Thumb Down</button>'
     str += '   </div>'
     str += ' </div>'
     str += '</div>'
@@ -143,7 +142,6 @@ function subRate(id) {
 }
 
 function sortPrice() {
-    // console.log('price')
     var swapped = true;
 
     while (swapped === true) {
@@ -162,9 +160,8 @@ function sortPrice() {
 
 
 function sortName() {
-    // console.log('name')
     var swapped = true;
-    while(swapped === true) {
+    while (swapped === true) {
         swapped = false;
         for (var i = 0; i < gBooks.length - 1; i++) {
             if (gBooks[i].Title > gBooks[i + 1].Title) {

@@ -40,7 +40,7 @@ function renderBooks(books) {
             '<td>' + bookItem.Id + '</td>' +
             '<td>' + bookItem.Title + '</td>' +
             '<td>' + bookItem.Price + '</td>' +
-            '<td><button onclick="bookModal(' + i + ')"type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">read</button></td>' +
+            '<td><button onclick="bookModal(' + i + ')"type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">read</button></td>' +
             '<td><button  id="' + books[i].Id + '" type="button" class="btn btn-success" onclick=" readAndUpdateBook(this)">Update</button></td>' +
             '<td><button  id="' + books[i].Id + '" type="button" class="btn btn-warning" onclick="deleteBook(this)">Delete</button></td>' +
             '</tr>';
@@ -80,7 +80,7 @@ function newBook() {
 
 function addBook(name, price) {
     var id = gBooks.length
-    gBooks.push({ Id: id, Title: name, Price: price });
+    gBooks.push({ Id: id+1, Title: name, Price: price });
     renderPage(3);
 }
 
@@ -199,3 +199,12 @@ function getPageBooks(pageNumber) {
     }
 }
 
+function prevPage(){
+    if(gCurrPage===1) return;
+
+    renderPage(gCurrPage-1)}
+
+function nextPage(){
+    renderPage(gCurrPage+1);
+    if(gCurrPage===3) return;
+}

@@ -14,80 +14,81 @@
 
 </head>
 
-<body  onload=initStore()>
-    <!-- <button onclick="readAndAddNewBook()" type="button" class="btn btn-secondary">Add Book</button> -->
-    <!-- <button onclick="readAndAddNewBook()" type="button" class="btn btn-secondary">HERE ARE MY BOOKS</button> -->
-<div class="container">
+<body onload=initStore()>
 
-    <h1 onclick="sortBooks()"><bold>My Bookstore</bold> </h1>
-    <h6 onclick="sortName()">SORT BY NAME</h6>
-    <h6 onclick="sortPrice()">SORT BY PRICE</h6>
-    
-    
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="input-group">
-                <span class="input-group-addon">
+    <div class="container">
+
+        <h1 onclick="sortBooks()">
+            <bold>My Bookstore</bold>
+        </h1>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
                     <!-- <input type="checkbox" aria-label="Checkbox for following text input"> -->
                     Title:
                 </span>
-                <input id="title" class="box" type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input id="title" class="box" type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
             </div>
-        </div>
-        
-        <div class="col-lg-4">
-            <div class="input-group">
-                <span class="input-group-addon">
+
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
                     <!-- <input type="radio" aria-label="Radio button for following text input"> -->
                     Price:              
                 </span>
-                <input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+                    <input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="input-group">
-                <!-- <span class="input-group-addon">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <!-- <span class="input-group-addon">
                     
                 </span> -->
-                <button onclick="newBook()"type="button" class="btn btn-primary">Add</button>
+                    <button onclick="newBook()" type="button" class="btn btn-primary">Add</button>
+                </div>
             </div>
         </div>
+
+        <h6 onclick="sortName()">Sort By Name</h6>
+        <h6 onclick="sortPrice()">Sort By Price</h6>
+
+        <table class="table table-white">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col" class="price">Price $</th>
+                    <th scope="col" class="action">Action</th>
+                </tr>
+            </thead>
+            <tbody id="booksList">
+
+            </tbody>
+        </table>
+
+        <nav class="addData" aria-label="Page navigation example">
+            <ul class="pagination">
+                <li onclick="prevPage()" class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li onclick="renderPage(1)" class="page-item"><a class="page-link" href="#">1</a></li>
+                <li onclick="renderPage(2)" class="page-item"><a class="page-link" href="#">2</a></li>
+                <li onclick="renderPage(3)" class="page-item"><a class="page-link" href="#">3</a></li>
+                <li  onclick="nextPage()" class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </div>
+
+
+        <script src="lib/jquery/jquery.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="js/bookStore.js"></script>
+
     </div>
-    
-    <table class="table table-white">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Title</th>
-                <th scope="col" class="price">Price</th>
-                <th scope="col" class="action">Action</th>
-            </tr>
-        </thead>
-        <tbody id="booksList">
-            
-        </tbody>
-    </table>
-    
-    <nav class="addData" aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li onclick="renderPage(1)" class="page-item"><a class="page-link" href="#">1</a></li>
-            <li onclick="renderPage(2)" class="page-item"><a class="page-link" href="#">2</a></li>
-            <li onclick="renderPage(3)" class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    </div>
-    
-    
-    <script src="lib/jquery/jquery.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="js/bookStore.js"></script>
-    
-</div>
 </body>
 
 </html>

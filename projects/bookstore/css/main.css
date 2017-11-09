@@ -5,6 +5,9 @@
     /* border-style: solid; */
     border-top-style: solid;
 } 
+.box{
+    margin: 5px;
+}
 
 .price{
     text-align: left;
@@ -20,7 +23,9 @@
 }
 
 body{
-    padding:50px;
+    padding:100px;
+    margin-left:50px;
+    
      font-family: 'Roboto Slab'; 
      background: url("bookstore.jpg");
      /* opacity: 0.5;
@@ -47,8 +52,8 @@ body{
     background-color: rgba(222, 184, 135, 0.4);
 }
  .btn-primary{
-margin:5px;
-margin-top: 0px;
+margin:20px;
+margin-left: 450px;
 }
 
 .fa-thumbs-o-up{
@@ -60,5 +65,7 @@ font-size: 30px;
     color:red;
     margin:5px;
     font-size: 30px;
-    
 }
+
+
+

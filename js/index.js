@@ -9,7 +9,7 @@ function initPage() {
     { id: 'calc', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
     { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },
     { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' },
-    { id: 'guessMe', name: 'Guess me', title: 'Serch my mind', decs: 'Lets see how well you know me' }
+    { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' }
 ];
     render();
 }

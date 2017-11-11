@@ -4,15 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <title>SimonSays</title>
 </head>
 
-<h1>SIMON SAYS</h1>
+
+
 <body onload="createColors()">
-    <div class="colors"></div>
-    <button onclick="startGame()">START</button>    
-    <button onclick="restart()">RESTART</button>
-    <script src="SimonSays.js"></script>
+        <button type="button" class="btn btn-secondary" onclick="startGame()">START</button>           
+        <button type="button" class="btn btn-secondary" onclick="restart()">RESTART</button>
+        <div class="color"></div>
+
+        <script src="SimonSays.js"></script> 
+        
+    
 </body>
+
 
 </html>

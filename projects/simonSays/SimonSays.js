@@ -1,46 +1,41 @@
 
-var gNumOfColors = 5;
-var colors = ['tomato', 'orange', 'dodgerBlue', 'slateBlue', 'violet'];
+var gNumOfColors = 4;
+var colors = ['tomato', 'orange', 'dodgerBlue', 'violet'];
 var colorSamples = [];
-var click = 0;
-var turn = 0;
+var gTurn = 1;
 var timeoutID;
-var timeoutID2;
+var gI = 0;
 
 function startGame() {
-
     randColors();
 }
 
 function createColors() {
     var namesOfColors = [];
-    var elDiv = document.querySelector('.colors');
+    var elColor = document.querySelector('.color');
     for (var i = 0; i < gNumOfColors; i++) {
         var str = '';
-        str += '<div class="color ' + colors[i] + '" onclick="cellClicked(this)"></div>'
-        elDiv.innerHTML += str;
+        str += '<button class="'+ colors[i] + '" onclick="cellClicked(this)"></button>'
+        elColor.innerHTML += str;
     }
 }
 
 
-//generate arr of colors
 function randColors() {
 
-    turn++;
-    timeoutID = setTimeout(function () {
-        for (var i = 0; i < turn; i++) {
-            var temp = Math.floor(Math.random() * 4, 0);
-            colorSamples[i] = colors[temp];
-            console.log('colorSamples[i]', colorSamples[i])
-            var elcolor = document.querySelector('.' + colorSamples[i]);
-            elcolor.classList.add('chosenColor');
-        }
-    }, 1000);
+    var temp = Math.floor(Math.random() * 5, 0);
+    colorSamples[gI] = colors[temp];
+    console.log('colorSamples[i]', colorSamples[gI])
+    var elcolor = document.querySelector('.' + colorSamples[gI]);
+    elcolor.classList.add('chosenColor');
+    console.log('gI gTurn',gI,gTurn)
+    gI++;
+    if (gI < gTurn) setTimeout(randColors, 2000);
 }
+
 
 function cellClicked(elCell) {
 
-    clearTimeout(timeoutID);
     console.log('elCell', elCell)
     var str = elCell.classList.value;
     var vals = str.split(" ");
@@ -50,14 +45,16 @@ function cellClicked(elCell) {
 
     if (colorSamples.length === 0) {
         console.log('YOU ARE CORRECT IN ALL TIMES');
+        gI = 0;
+        gTurn++;
         randColors();
     }
 }
 
 function restart() {
     colorSamples = [];
-    click = 0;
-    turn = 0;
+    // click = 0;
+    gTurn = 0;
     randColors();
     var elHead = document.querySelector('h1');
     elHead.innerText = 'SIMON SAYS';

@@ -15,46 +15,11 @@
 </head>
 
 <body onload=initStore()>
-
     <div class="container">
-
         <h1 onclick="sortBooks()">
             <bold>My Bookstore</bold>
         </h1>
-<!-- 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                    <! <input type="checkbox" aria-label="Checkbox for following text input"> -->
-                    <!-- Title:
-                </span>
-                    <input id="title" class="box" type="text" class="form-control" aria-label="Text input with checkbox">
-                </div>
-            </div> -->
-
-            <!-- <div class="col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                    <! <input type="radio" aria-label="Radio button for following text input"> -->
-                    <!-- Price:              
-                </span>
-                    <input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">
-                </div>
-            </div> -->
-            <!-- <div class="col-lg-4">
-                <div class="input-group"> -->
-                    <!-- <span class="input-group-addon"> -->
-                    
-                <!-- </span> -->
-                    <!-- <button onclick="newBook()" type="button" class="btn btn-primary">Add</button> -->
-                    <!-- <button onclick="newBookModal()" type="button" class="btn btn-primary">Add New Book</button>
-                    
-                </div>
-            </div> -->
-        <!-- </div> --> 
-        <button onclick="newBookModal() "type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add New Book</button></td>
-        <!-- <button onclick="newBookModal()" type="button" class="btn btn-primary">Add New Book</button> -->
+        <button onclick="newBook() " type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add New Book</button></td>
         <h6 onclick="sortName()">Sort By Name</h6>
         <h6 onclick="sortPrice()">Sort By Price</h6>
 
@@ -78,14 +43,37 @@
                 <li onclick="renderPage(1)" class="page-item"><a class="page-link" href="#">1</a></li>
                 <li onclick="renderPage(2)" class="page-item"><a class="page-link" href="#">2</a></li>
                 <li onclick="renderPage(3)" class="page-item"><a class="page-link" href="#">3</a></li>
-                <li  onclick="nextPage()" class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li onclick="nextPage()" class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
         </nav>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         </div>
-
+        <!-- New Modal -->
+        <div class="modal fade" id="newExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                               </button>
+                    </div>
+                    <div class="modal-body">
+                        </br>
+                        Price:<input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+                        </br>
+                        Title:<input id="title" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+                        </br>
+                        Desc:<input id="desc" class="box" type="text" class="form-control" aria-label="Text input with radio button">
+                        <button class="doneButton" onclick="newBook()" type="button">Done</button>
+                        <img src="img/' + gBooks[0].Id + '.jpg">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="lib/jquery/jquery.js"></script>
         <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>

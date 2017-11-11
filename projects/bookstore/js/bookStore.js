@@ -80,9 +80,7 @@ function renderBooks(books) {
             '<td><button  id="' + books[i].Id + '" type="button" class="btn btn-success" onclick=" readAndUpdateBook(this)">Update</button></td>' +
             '<td><button  id="' + books[i].Id + '" type="button" class="btn btn-warning" onclick="deleteBook(this)">Delete</button></td>' +
             '</tr>';
-
     }
-
 }
 
 function deleteBook(elBook) {
@@ -228,35 +226,6 @@ function nextPage() {
     if (gCurrPage === 3) return;
 }
 
-function newBookModal() {
-
-    var str = '';
-    str += ' <div class="modal-dialog" role="document">'
-    str += '<div class="modal-content">'
-    str += '    <div class="modal-header">'
-    str += '       <button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-    str += '           <span aria-hidden="true">&times;</span>'
-    str += '       </button>'
-    str += '   </div>'
-    str += '   <div class="modal-body">'
-    str += '</br>'
-    str += ' Price:<input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">'
-    str += '</br>'
-    str += ' Title:<input id="title" class="box" type="text" class="form-control" aria-label="Text input with radio button">'
-    str += '</br>'
-    str += ' Desc:<input id="desc" class="box" type="text" class="form-control" aria-label="Text input with radio button">'
-    str += '<button class="doneButton" onclick="newBook()" type="button" >Done</button>'
-    // str += '<img src="img/' + gBooks[0].Id + '.jpg">'
-
-    str += '   </div>'
-    str += '   <div class="modal-footer">'
-    str += '   </div>'
-    str += ' </div>'
-    str += '</div>'
-    var elModal = document.querySelector('#exampleModal');
-    elModal.innerHTML = str;
-
-}
 
 function newBook() {
 

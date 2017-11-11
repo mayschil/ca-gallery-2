@@ -70,7 +70,7 @@ position: relative;
 } 
 
 .chosenColor {
-    animation-duration: 0.7s;
+    animation-duration: 0.5s;
     animation-name: blink;
     animation-iteration-count: 1;
     animation-direction: alternate;

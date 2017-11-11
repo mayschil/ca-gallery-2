@@ -5,6 +5,7 @@ var colorSamples = [];
 var gTurn = 1;
 var timeoutID;
 var gI = 0;
+var gProcess;
 
 function startGame() {
     randColors();
@@ -15,7 +16,7 @@ function createColors() {
     var elColor = document.querySelector('.color');
     for (var i = 0; i < gNumOfColors; i++) {
         var str = '';
-        str += '<button class="'+ colors[i] + '" onclick="cellClicked(this)"></button>'
+        str += '<button class="' + colors[i] + '" onclick="cellClicked(this)"></button>'
         elColor.innerHTML += str;
     }
 }
@@ -23,14 +24,15 @@ function createColors() {
 
 function randColors() {
 
-    var temp = Math.floor(Math.random() * 5, 0);
+    var temp = Math.floor(Math.random() * 4, 0);
     colorSamples[gI] = colors[temp];
     console.log('colorSamples[i]', colorSamples[gI])
     var elcolor = document.querySelector('.' + colorSamples[gI]);
     elcolor.classList.add('chosenColor');
-    console.log('gI gTurn',gI,gTurn)
+    console.log('gI gTurn', gI, gTurn)
     gI++;
-    if (gI < gTurn) setTimeout(randColors, 2000);
+    if (gI < gTurn && gProcess === true) setTimeout(randColors, 1000);
+
 }
 
 
@@ -40,14 +42,14 @@ function cellClicked(elCell) {
     var str = elCell.classList.value;
     var vals = str.split(" ");
     var color = colorSamples.splice(0, 1);
-    if (vals[1] === color[0]) console.log('YOU ARE CORRECT');
+    if (vals[0] === color[0]) console.log('YOU ARE CORRECT');
     else console.log('YOU ARE WRONG');
 
     if (colorSamples.length === 0) {
         console.log('YOU ARE CORRECT IN ALL TIMES');
         gI = 0;
         gTurn++;
-        randColors();
+        setTimeout(randColors, 1000);
     }
 }
 

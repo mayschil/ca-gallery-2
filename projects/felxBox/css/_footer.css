@@ -1,0 +1,61 @@
+
+
+.box{
+    height: 40px;
+    width:40px;
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon1:hover{ background-color: #516fad;
+    cursor: pointer;
+}
+
+.icon2:hover{ background-color: lightblue;
+    cursor: pointer;
+}
+
+.icon3:hover{ background-color: #516fad;
+    cursor: pointer;
+}
+
+.icon4:hover{ background-color: pink;
+    cursor: pointer;
+}
+
+.media_icons{
+    width:230px;
+    display: flex;
+    flex-direction:row; 
+    justify-content: space-around;
+}
+
+.end_of_page{
+   height: 315px;
+   background-color: #f8f8f8;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   justify-content: center;
+}
+
+.end{
+    height: 170px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo_white{
+    display: flex;
+align-self: center;    
+}
+
+.rights_img{
+    display: flex;
+   align-self: center;    
+}

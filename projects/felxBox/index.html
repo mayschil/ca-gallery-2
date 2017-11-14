@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styleImport.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="modal" style="display:none">
+        <div class=" modal-layout">
+            <p class="join">Join us to get access to the latest stories!</p>
+            <div class="add-text">
+                <label for="text-modal">Some Text</label>
+                <input class="input-modal" type="text" id="text-modal" name="enter-text" placeholder="Write some text">
+            </div>
+            <button class="close-modal" onclick="modal()">Close</button>
+            <button class="submit"> <a href="#"></a>Submit</button>
+        </div>
+    </div>
+
+    <div class="header">
+        <nav class="container flex_nav">
+            <label for="phone-menu" class="mobile-icon">&#9776;</label>
+            <input type="checkbox" id="phone-menu">
+            <div class="mobile-menu">
+                <img class="logo" src="img/slice-1.png">
+                <ul>
+                    <li><a href="#">Journal</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container story-containter">
+        <div class="container story">
+            <img class="story_img" src="img/slice-2.png">
+            <div class="text-button-box">
+                <p class="headline">Duis aute irure dolor in henderit in voluptate.</p>
+                <p class="text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.<br><br>Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <div>
+                    <button onclick="modal()"> <a href="#"></a> Continue Reading &nbsp;<span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="container story">
+            <img class="story_img" src="img/slice-4.png">
+            <div class="text-button-box">
+
+                <p class="headline">Duis aute irure dolor in henderit in voluptate.</p>
+                <p class="text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.<br><br> Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+
+                <button onclick="modal()">  <a href="#"></a> Continue Reading  &nbsp;<span>&rarr;</span></button>
+            </div>
+        </div>
+        <div class="container story">
+            <img class="story_img" src="img/slice-5.png">
+            <div class="text-button-box">
+                <p class="headline">Duis aute irure dolor in henderit in voluptate.</p>
+                <p class="text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.<br><br> Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <button onclick="modal()">  <a href="#"></a> Continue Reading &nbsp; <span>&rarr;</span></button>
+            </div>
+        </div>
+        <div class="container prev_next">
+            <div class="prev">
+                <img class="arrowl" src="img/slice-11.png">
+                <p>  <a href="#"></a>PREVIOUS</p>
+            </div>
+            <div class="next">
+                <p>  <a href="#"></a>NEXT</p>
+                <img class="arrowr" src="img/slice-10.png">
+
+            </div>
+        </div>
+    </div>
+    <div class="end_of_page">
+        <div class="end">
+            <img class="logo_white" src="img/slice-13.png">
+            <img class="rights_img" src="img/slice-7.png">
+            <div class="media_icons">
+                <div class="box icon1"> <a href="#"></a><img src="img/f.png"></div>
+                <div class="box icon2"> <a href="#"></a><img src="img/l.png"></div>
+                <div class="box icon3"> <a href="#"></a><img src="img/e.png"></div>
+                <div class="box icon4"> <a href="#"></a><img src="img/d.png"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/flexbox.js"></script>
+</body>
+
+</html>

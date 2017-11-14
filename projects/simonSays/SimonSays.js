@@ -31,7 +31,7 @@ function randColors() {
     elcolor.classList.add('chosenColor');
     console.log('gI gTurn', gI, gTurn)
     gI++;
-    if (gI < gTurn && gProcess === true) setTimeout(randColors, 1000);
+    if (gI < gTurn) setTimeout(randColors, 1000);
 
 }
 

@@ -40,6 +40,11 @@ body{
     width: 120px;
 }
 
+.submit a{
+    text-decoration: none;
+    color: #c2c2c2;
+}
+
 .add-text{
     margin: 100px;
     display: flex;

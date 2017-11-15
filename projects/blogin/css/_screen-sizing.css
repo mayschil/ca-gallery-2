@@ -10,6 +10,7 @@
         margin: 0;
         padding: 0;
     }
+    
 }
 
 
@@ -53,12 +54,16 @@
 
   
 @media screen and (max-width: 690px) {
+
+    .dropdown:hover .dropdown-content {
+       display: none;
+    }
+
     .modal-layout{
         width: 100%;
         height: 100%;
     }
 
-    
     li:first-child{
         border-left:none;
         

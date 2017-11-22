@@ -1,0 +1,74 @@
+
+
+.display-keys p:hover{
+    cursor:pointer;
+}
+
+
+
+p.key-size1{
+    font-size: 16px;
+    width:85px;
+    height:40px;
+    margin:0;
+    text-align: center;
+    color: #948F8F;
+    /* text-transform:capitalize; */
+    /* margin: 10px; */
+}
+
+p.key-size2{
+    font-size: 22px;
+    width:135px;
+    height:40px;
+    margin:0;
+    text-align: center;  
+    color:#817D7D;  
+    /* text-transform:capitalize; */
+    /* margin: 10px;   */
+}
+
+p.key-size3{
+    font-size: 26px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;   
+    color:#625F5F; 
+    /* text-transform:capitalize; */
+    /* margin: 10px; */
+}
+
+p.key-size4{
+    font-size: 30px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;   
+    color:#3E3A3A ;
+    
+    /* text-transform:capitalize; */
+    /* margin: 10px;   */
+}
+p.key-size5{
+    font-size: 34px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;  
+    color: #211F1F  ;
+  
+    /* text-transform:capitalize; */
+    /* margin: 10px; */
+}
+
+p.key-size6{
+    font-size: 38px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;  
+    color: #1E1C1C;  
+    /* text-transform:capitalize; */
+    /* margin: 10px;   */
+}

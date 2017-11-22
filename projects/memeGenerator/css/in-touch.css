@@ -1,0 +1,145 @@
+.in-touch{
+    background-color:#323232 ;
+    height:560px;     
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    align-items: center;
+}
+
+.intouch{
+    background-color: #323232;
+}
+.get-touch-head{
+    font-size: 22px;
+    color:#e0e0e0;
+    font-family: 'Maven Pro';
+    margin: 0;
+}
+
+.get-touch-guide{
+    font-size: 18px;
+    color:#e0e0e0;
+    font-family: 'Maven Pro';
+    margin: 0;
+}
+
+.client-details{
+    font-size: 12px;
+    color:#e0e0e0;
+}
+
+.text{
+    width: 100%;
+    height: 38px;
+    background-color: #454545;
+    border:none;
+    color:#e0e0e0;
+}
+
+.msg{
+    width: 100%;
+    height: 150px; 
+    background-color: #454545;
+    border:none;
+    color:#e0e0e0;    
+}
+
+.client-details{
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;    
+    margin-top: 17px;
+}
+
+.btn-send{
+    width:90px;
+    height: 37px; 
+    background-color:#2eb398;
+    font-size: 12px;
+    color:#e0e0e0;
+    border: none;
+}
+
+input::placeholder{
+    color:#e0e0e0;
+    padding-left: 11px;
+}
+
+.right-box{
+  
+        width: 23%;
+        font-size: 12px;
+        margin-top: -138px;
+}
+
+.left-box{
+    width:70%;
+}
+
+.words {
+    /* width:180px; */
+    /* height:117px; */
+    color:#e0e0e0;
+    margin-top: 15px;
+    
+}
+
+.communication{
+    /* width:121px; */
+    height:54px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.address {
+    margin: 0;
+    color:#e0e0e0;
+} 
+.phone-num {
+    margin: 0;
+    color:#e0e0e0;
+} 
+.email{
+    margin: 0;
+    color:#e0e0e0;
+} 
+
+.headline-touch{
+    margin-bottom: 17px;
+}
+
+.words > p {
+    margin: 0;
+    color:#e0e0e0;
+    height: 117px;
+    line-height: 15px;
+  }
+
+  .loc, .down,.mail{
+      width: 7px;
+      height: 11px;
+  }
+
+  .address, .phone-num, .email{
+      width: 152px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+
+  .go-top3 a{
+    color:#454545;
+}
+
+.go-top3 {
+    color:#454545;
+    width:100px;
+    height: 23px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+}

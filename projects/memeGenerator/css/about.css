@@ -1,0 +1,39 @@
+.about-div{
+background-color:#F1F062 ;
+height: 200px;
+}
+
+.about{
+
+width:80%;
+height: 100%;
+background-color:#F1F062 ;
+display: flex;
+align-items: center;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.about-headline{
+    font-size:30px;
+    color:#454545;
+    font-family: 'Maven Pro';
+    margin: 0;
+}
+
+.about-details{
+    font-size: 12px;
+    margin: 0;
+}
+
+
+.go-top1 a{
+    color:#ebeff0;
+}
+
+.go-top1{
+    border: none;
+    width:100px;
+    height: 23px;
+    background-color:#454545;
+}

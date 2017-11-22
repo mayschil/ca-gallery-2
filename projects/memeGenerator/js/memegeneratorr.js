@@ -176,3 +176,9 @@ function showEditer() {
     var elMemeGenerator = document.querySelector('#memeGenerator');
     elMemeGenerator.style.display = 'flex';
 }
+
+function downloadImg(elLink) {
+    console.log('elLink',elLink)
+    elLink.href = canvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
+}

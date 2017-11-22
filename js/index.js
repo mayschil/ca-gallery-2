@@ -10,8 +10,8 @@ function initPage() {
     { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },
     { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' },
     { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' },
-    { id: 'blogin', name: 'My first page', title: 'sample', decs: 'Web page' },
-    { id: 'memeGenerator', name: 'The Meme Generator', title: 'app', decs: 'generate meme' }
+    { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
+    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' }
 ];
     render();
 }

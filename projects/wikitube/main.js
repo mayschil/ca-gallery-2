@@ -1,7 +1,7 @@
 'use strict'
 const YT_KEY = 'AIzaSyBCSqrSKy5kKik3k1GJAw0YAIBTvWTqokU';
 var gValue = '';
-getData();
+// getData();
 
 function displaySearch() {
     var elSearch = document.querySelector('input');

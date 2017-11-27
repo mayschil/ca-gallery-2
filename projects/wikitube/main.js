@@ -70,7 +70,11 @@ function showData(info) {
         elInfo.innerHTML += strHtml;
     }
     else {
-        elInfo.innerHTML = 'No Data To Display';
+        var strHtml = `
+        <p class="title" >${info[0]}</p>
+        <p>No Data To Display</p>
+        `
+        elInfo.innerHTML = strHtml;
     }
 }
 

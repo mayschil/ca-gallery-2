@@ -118,15 +118,19 @@ iframe{
     }
 
     .wiki-info{
-        width: 217%;
+        width: 87%;
     }
 
     .videos{
         width:44%;
+        margin-left: 13px;
     }
 
+    .right-side{
+        width:100%;
+    }
     iframe{
-        width: 210%;
+        width: 95%;
     }
 
     .btn-info{

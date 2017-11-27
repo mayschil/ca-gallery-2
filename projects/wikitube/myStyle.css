@@ -28,11 +28,15 @@ button{
     margin-top: 30px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
 .videos{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width:30%;
+    width:45%;
 }
 
 .video-div{
@@ -62,15 +66,18 @@ button{
 }
 
 .right-side{
-    width:45%; 
+    width:68%; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .wiki-info{
     display: flex;
     flex-direction: column;
+    width: 70%;
+    justify-content: center;
 }
 
 .title{

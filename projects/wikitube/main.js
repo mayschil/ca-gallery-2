@@ -11,13 +11,6 @@ function displaySearch() {
     document.querySelector('.videos').innerHTML = '';
     document.querySelector('.wiki-info').innerHTML = '';
     elSearch.value = '';
-    fetch(`https://en.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=${gValue}&limit=5`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((info) => {
-            showData(info);
-        })
     getData();
 }
 

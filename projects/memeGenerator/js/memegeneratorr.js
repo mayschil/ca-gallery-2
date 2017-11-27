@@ -125,13 +125,12 @@ function align_txt(direction,idx) {
     switch(direction) {
         case 'r': gMeme.txts[idx].x = gMeme.originalWidth - textWidth;
         break;
-        case 'c': gMeme.txts[idx].x = Math.round(gMeme.originalWidth / 2);
+        case 'c': gMeme.txts[idx].x = gMeme.originalWidth / 2;
         break;
-        case 'l': gMeme.txts[idx].x = 0;
+        case 'l': gMeme.txts[idx].x = 5;
         break;
     }
     drawMeme()
-
 }
 
 
@@ -154,11 +153,12 @@ function makeMeme(elImg) {
     gMeme.elImg = img;
     img.src = gMeme.src;
 
-    gMeme.txts[0].y = parseInt(gMeme.originalHeight * 0.2);
+    
     gMeme.txts[0].x = parseInt(gMeme.originalWidth * 0.2);
-
-    gMeme.txts[1].y = gMeme.originalHeight - parseInt(gMeme.originalHeight * 0.18);
+    gMeme.txts[0].y = parseInt(gMeme.originalHeight * 0.2);
+    
     gMeme.txts[1].x = parseInt(gMeme.originalWidth * 0.2);
+    gMeme.txts[1].y = gMeme.originalHeight - parseInt(gMeme.originalHeight * 0.18);
 
     img.onload = function () {
         canvas = document.getElementById('canvas');
@@ -175,10 +175,4 @@ function showEditer() {
     // elPage.style.display = "none";
     var elMemeGenerator = document.querySelector('#memeGenerator');
     elMemeGenerator.style.display = 'flex';
-}
-
-function downloadImg(elLink) {
-    console.log('elLink',elLink)
-    elLink.href = canvas.toDataURL();
-    elLink.download = 'perfectMeme.jpg';
 }

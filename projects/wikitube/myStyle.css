@@ -1,0 +1,119 @@
+.headline{
+    font-size: 50px;
+}
+
+.container{
+    padding: 10px;
+    background-color: rgb(233, 174, 36);
+    max-width:1000px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height:30px;
+}
+
+button{
+    height:40px;
+}
+.head-div{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.videos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:45%;
+}
+
+.video-div{
+    margin: 5px;
+    background-color: #23D1A1;
+    height:150px;
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.middle-div{
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.show-video{
+    background-color: gray;
+    width:400px;
+    height:400px;
+}
+
+.right-side{
+    width:45%; 
+}
+
+.wiki-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    text-transform: capitalize;
+    line-height: 20px;
+    display: flex;
+    font-size: 30px;
+}
+
+.decs{
+    line-height: 23px;
+}
+
+
+.search-img{
+    display: flex;
+}
+
+@media screen and (max-width: 450px) {
+    .head-div{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .video-div {
+        width: 195%;
+    }
+
+    .middle-div{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .wiki-info{
+        width: 217%;
+    }
+
+    .videos{
+        width:48%;
+    }
+
+    iframe{
+        width: 220%;
+    }
+
+    .btn-info{
+        display: block;
+    }
+}

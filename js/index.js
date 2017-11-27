@@ -11,7 +11,8 @@ function initPage() {
     { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' },
     { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' },
     { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
-    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' }
+    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
+    { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' }
 ];
     render();
 }

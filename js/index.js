@@ -12,7 +12,8 @@ function initPage() {
     { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' },
     { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
     { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
-    { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' }
+    { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' },
+    { id: 'TravelTip', name: 'Travel Tip', title: 'Get data of your location', decs: 'location and weather info' }
 ];
     render();
 }

@@ -1,5 +1,11 @@
 'use strict'
 
+var gLat;
+var gLng;
+
+var gUrl =  `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${gLat}&lng=${gLng} `;
+
+
 function initPage() {
     getPosition();
 }
@@ -19,19 +25,16 @@ function showLocation(position) {
     document.getElementById("latitude").innerHTML = position.coords.latitude;
     document.getElementById("longitude").innerHTML = position.coords.longitude;
     document.getElementById("accuracy").innerHTML = position.coords.accuracy;
-
     var date = new Date(position.timestamp);
     document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    var url = `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${position.coords.latitude}&lng=${position.coords.longitude} `;
-    getNewUrl(url);
-    console.log(url)
     getGeoLocation(position.coords.latitude, position.coords.longitude);
+    gLat = position.coords.latitude;
+    gLng = position.coords.longitude;
     initMap(position.coords.latitude, position.coords.longitude);
 }
 
-
-function getNewUrl(url) {
-    document.querySelector('a').href = url;
+function Copy() {
+  console.log(gUrl)
 }
 
 

@@ -41,44 +41,53 @@ function handleData(items) {
     });
 }
 
-function playVideo(videoID,videoTitle) {
-    console.log('videoTitle',videoTitle)
+function playVideo(videoID, videoTitle) {
+    var regex = /\s+\S*$/;
+    console.log('videoTitle', videoTitle)
+
     var elFrame = document.querySelector('iframe');
     elFrame.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+    searchWikiData(videoTitle);
+}
+
+function searchWikiData(videoTitle) {
+    console.log('videoTitle', videoTitle)
     fetch(`https://en.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=${videoTitle}&limit=5`)
-    .then((res) => {
-        return res.json();
-    })
-    .then((info) => {
-        showData(info);
-        console.log('info', info)
-    })
+        .then((res) => {
+            return res.json();
+        })
+        .then((info) => {
+            if (info[2].length === 0) {
+                videoTitle = videoTitle.replace(/\s+\S*$/, "");
+                searchWikiData(videoTitle);
+            }
+            else {
+                showData(info);
+                return
+            }
+        })
+    return
 }
 
 function showData(info) {
     console.log('info', info)
     var elInfo = document.querySelector('.wiki-info');
-    if (info[2].length > 0) {
-        var strHtml = `
-        <div>
-        <p class="title" >${info[0]}</p>
-        <a href="${info[3][0]}"><p class="decs">${info[2]}</a>
-        </p>
-        <button class="btn-info" style="display:none" onclick="closeInfo()">Close</button>
-        </div>
-        `
-        elInfo.innerHTML += strHtml;
-    }
+    console.log('elInfo.innerHTML',elInfo.innerHTML)
+    if (elInfo.innerHTML) return;
     else {
         var strHtml = `
-        <p class="title" >${info[0]}</p>
-        <p>No Data To Display</p>
-        `
-        elInfo.innerHTML = strHtml;
+            <div>
+            <p class="title" >${info[0]}</p>
+            <a href="${info[3][0]}"><p class="decs">${info[2]}</a>
+            </p>
+            <button class="btn-info" style="display:none" onclick="closeInfo()">Close</button>
+            </div>
+            `
+        elInfo.innerHTML += strHtml;
     }
 }
 
 
-function closeInfo(){
- document.querySelector('.wiki-info').innerHTML = '';
+function closeInfo() {
+    document.querySelector('.wiki-info').innerHTML = '';
 }

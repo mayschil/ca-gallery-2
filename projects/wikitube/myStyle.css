@@ -74,11 +74,13 @@ a{
 }
 
 .wiki-info{
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 70%;
     justify-content: center;
-    margin-top: -114px;
+    margin-top: -50px;
 }
 
 .title{

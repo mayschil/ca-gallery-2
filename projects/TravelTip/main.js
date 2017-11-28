@@ -34,7 +34,10 @@ function showLocation(position) {
 }
 
 function Copy() {
-  console.log(gUrl)
+   var Url = document.createElement("textarea");
+   urlCopied.innerHTML = window.location.href;
+   Copied = gUrl.createTextRange();
+   Copied.execCommand("Copy");
 }
 
 

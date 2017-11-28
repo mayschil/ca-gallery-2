@@ -3,7 +3,7 @@
 var gLat;
 var gLng;
 
-var gUrl =  `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${gLat}&lng=${gLng} `;
+var gUrl;
 
 
 function initPage() {
@@ -22,22 +22,24 @@ function getPosition() {
 
 function showLocation(position) {
     // console.log('position', position);
-    document.getElementById("latitude").innerHTML = position.coords.latitude;
-    document.getElementById("longitude").innerHTML = position.coords.longitude;
-    document.getElementById("accuracy").innerHTML = position.coords.accuracy;
+    // document.getElementById("latitude").innerHTML = position.coords.latitude;
+    // document.getElementById("longitude").innerHTML = position.coords.longitude;
+    // document.getElementById("accuracy").innerHTML = position.coords.accuracy;
     var date = new Date(position.timestamp);
-    document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    // document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     getGeoLocation(position.coords.latitude, position.coords.longitude);
     gLat = position.coords.latitude;
     gLng = position.coords.longitude;
+    gUrl= `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${gLat}&lng=${gLng} `;    
     initMap(position.coords.latitude, position.coords.longitude);
 }
 
-function Copy() {
-   var Url = document.createElement("textarea");
-   urlCopied.innerHTML = window.location.href;
-   Copied = gUrl.createTextRange();
-   Copied.execCommand("Copy");
+function copy() {
+    var Url = document.getElementById("url");
+    Url.innerHTML = gUrl;
+    console.log(Url.innerHTML)
+    Url.select();
+    document.execCommand("copy");
 }
 
 
@@ -103,6 +105,7 @@ function getWeather(lat, lon) {
         })
         .then((data) => {
             console.log('temp', data.main.temp)
+            document.querySelector('.temp').innerHTML = data.main.temp;
             document.querySelector('.weather').innerHTML = data.weather[0].description;
 
         })

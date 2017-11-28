@@ -10,25 +10,36 @@
 
 <body onload="initPage()">
 
-    <div>
-        <input type="button" value="Copy Url" onclick="Copy()" />
-        Paste: <textarea id="urlCopied" rows="1" cols="30"></textarea>
+    <div class="head-div">
+        <h1>Travel Tip</h1>
+        <div class="right-head">
+            <div class="search-div">
+                <div>
+                    <input type="text">
+                    <button class="btn-location" onclick="showMyLocation()">Search</button>
+                </div>
+                <div><button class="btn-location" onclick="getPosition()">My Location</button></div>
+            </div>
+            <div>
+                <input class="send-link" type="button" value="Copy Link" onclick="copy()" />
+                <textarea id="url" rows="1" cols="30"></textarea>
+            </div>
+        </div>
     </div>
 
-    <h1>Travel Tip</h1>
-    <h3 class="location">Location</h3>
-    <button class="btn-location" onclick="getPosition()">My Location</button>
-    <div>
-        <h2 class="weather" "width:10%;height:10%;"></h2>
-    </div>
-    <div>
-        <input type="text">
-        <button class="btn-location" onclick="showMyLocation()">My Location</button>
+    <div class="weather-location">
+        <h2>Current Location: <span class="pst"></span></h2>
+        <h2 "width:10%;height:10%;">The forecast for today is: <span class="weather"></span> and <span class="temp"></span> &#8451;</h2>
     </div>
 
     <div id="map" style="width:50%;height:500px;"></div>
-    <h2>Current Position: <span class="pst"></span></h2>
-    <table border="1">
+    <!-- <h3 class="location"></h3> -->
+
+
+
+
+
+    <!-- <table border="1">
         <tr>
             <td>Latitude</td>
             <td id="latitude"></td>
@@ -45,7 +56,7 @@
             <td>Timestamp</td>
             <td id="timestamp"></td>
         </tr>
-    </table>
+    </table> -->
 
     <p id="locationError"></p>
 

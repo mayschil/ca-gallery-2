@@ -2,7 +2,7 @@
 
 const YT_KEY = 'AIzaSyBCSqrSKy5kKik3k1GJAw0YAIBTvWTqokU';
 var gValue = '';
-// getData();
+
 
 function displaySearch() {
     var elSearch = document.querySelector('input');
@@ -44,7 +44,6 @@ function handleData(items) {
 function playVideo(videoID, videoTitle) {
     var regex = /\s+\S*$/;
     console.log('videoTitle', videoTitle)
-
     var elFrame = document.querySelector('iframe');
     elFrame.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
     searchWikiData(videoTitle);

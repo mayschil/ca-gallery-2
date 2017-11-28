@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Travel Tip</title>
+</head>
+
+<body onload="initPage()">
+    <h1>Travel Tip</h1>
+    <h3 class="location">Location</h3>
+    <button class="btn-location" onclick="getPosition()" >My Location</button>
+    <div>
+        <h2 class="weather" "width:10%;height:10%;"></h2>
+    </div>
+    <div>
+        <input type="text">
+        <button class="btn-location" onclick="showMyLocation()">My Location</button>
+    </div>
+
+    <div id="map" style="width:50%;height:500px;"></div>
+    <h2>Current Position: <span class="pst"></span></h2>
+    <table border="1">
+        <tr>
+            <td>Latitude</td>
+            <td id="latitude"></td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td id="longitude"></td>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td id="accuracy"></td>
+        </tr>
+        <tr>
+            <td>Timestamp</td>
+            <td id="timestamp"></td>
+        </tr>
+    </table>
+
+    <p id="locationError"></p>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs">
+
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

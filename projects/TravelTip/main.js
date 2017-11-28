@@ -22,9 +22,18 @@ function showLocation(position) {
 
     var date = new Date(position.timestamp);
     document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    var url = `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${position.coords.latitude}&lng=${position.coords.longitude} `;
+    getNewUrl(url);
+    console.log(url)
     getGeoLocation(position.coords.latitude, position.coords.longitude);
     initMap(position.coords.latitude, position.coords.longitude);
 }
+
+
+function getNewUrl(url) {
+    document.querySelector('a').href = url;
+}
+
 
 function initMap(lat, lng) {
     if (!lat) lat = 32.0749831;
@@ -58,8 +67,8 @@ function getGeoLocation(lat, lng) {
         .then((res) => {
             return res.json();
         })
-        .then((data) => {       
-            var address = data.results[0].formatted_address;    
+        .then((data) => {
+            var address = data.results[0].formatted_address;
             document.querySelector('.pst').innerText = address;
         })
 }
@@ -87,7 +96,7 @@ function getWeather(lat, lon) {
             return res.json();
         })
         .then((data) => {
-            console.log('temp',data.main.temp)
+            console.log('temp', data.main.temp)
             document.querySelector('.weather').innerHTML = data.weather[0].description;
 
         })
@@ -112,3 +121,5 @@ function handleLocationError(error) {
             break;
     }
 }
+
+

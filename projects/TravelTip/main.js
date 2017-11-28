@@ -58,11 +58,12 @@ function initMap(lat, lng) {
         }
     );
 
-
+    var image = 'oldman.png';
     var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
         map: map,
-        title: 'You Are Here!'
+        title: 'You Are Here!',
+        icon: image
     });
 
     getWeather(lat, lng);

@@ -3,7 +3,7 @@ body::after {
     background-repeat: no-repeat;
     background-size: cover;
     content: "";
-    opacity: 0.3;
+    opacity: 0.7;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -15,6 +15,7 @@ body::after {
 #map{
     width: 40%;
     margin: 0 auto;
+    border: 5px solid black;
 }
 
 textarea{
@@ -28,7 +29,10 @@ h1{
 }
 
 button ,.send-link{
+    height: 30px;
     border-radius: 20px;
+    background-color: #3A3AC0;
+    color: #FFFDFD;
 }
 
 .head-div{

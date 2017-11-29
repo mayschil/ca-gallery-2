@@ -35,20 +35,17 @@ function showLocation(position) {
 }
 
 function copy() {
-    var Url = document.getElementById("url");
-    Url.innerHTML = gUrl;
-    console.log(Url.innerHTML)
-    Url.select();
+    var url = document.getElementById("url");
+    url.innerHTML = gUrl;
+    console.log(url.innerHTML)
+    url.select();
     document.execCommand("copy");
 }
 
 
 function initMap(lat, lng) {
     if (!lat) lat = 32.0749831;
-
     if (!lng) lng = 34.9120554;
-
-
 
     var map = new google.maps.Map(
         document.getElementById('map'),

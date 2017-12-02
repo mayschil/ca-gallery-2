@@ -90,6 +90,7 @@ function rightClick(elCell) {
     elCell.innerHTML = '<i class="fa fa-flag-o" aria-hidden="true"></i>'
     if (elCell.classList.contains('markBomb')) {
         gChecks++;
+        document.querySelector('.bombs').innerHTML = gCountBombs-gChecks;
         checkGameOver();
     } 
        

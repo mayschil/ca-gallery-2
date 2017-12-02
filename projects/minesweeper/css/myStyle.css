@@ -1,5 +1,5 @@
 
-body::after {
+ body::after {
     background-image: url("1.jpg");
     background-repeat: no-repeat;
     background-size:cover; 
@@ -11,7 +11,7 @@ body::after {
     right: 0;
     left: 0;
     z-index: -1;   
-}
+} 
 
 body{
     font-family: 'Lato';
@@ -21,35 +21,35 @@ body{
     width: 50px;
     height:50px;
     text-align: center;
-    background-image: url("1.jpg");
+   
 }
 
 .mark0 {
-    background-color:grey;
+    background-color:#6763D0;
     color: grey;
 }
 .mark1 {
-    background-color:grey;
+    background-color:#6763D0;
     color: #4713E4;
 }
 .mark2 {
-    background-color:grey;
+    background-color:#6763D0;
     color: #003422;
 }
 .mark3 {
-    background-color:grey;
+    background-color:#6763D0;
     color: #F44517;
 }
 .mark4 {
-    background-color:grey;
+    background-color:#6763D0;
     color: #070330;
 }
 .mark5 {
-    background-color:grey;
+    background-color:#6763D0;
     color: #545083;
 }
 .markBomb{
-    background-color:grey;
+    background-color:#6763D0;
 }
 
 .cover{

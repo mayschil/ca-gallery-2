@@ -1,8 +1,26 @@
 
-body{
+/* body{
     background-image: url("background.jpg");
      
-}  
+}   */
+
+
+body::after {
+    background-image: url("background.jpg");
+    /* background-repeat: no-repeat; */
+    /* background-size:cover;  */
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;   
+}
+
+
+
 
 button{
 margin-left: 300px;

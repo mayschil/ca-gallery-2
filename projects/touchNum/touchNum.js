@@ -1,4 +1,4 @@
-
+'use strict'
 var gCount = 1;
 var gTimePassed = 0;
 var gNums = [];
@@ -7,28 +7,30 @@ var gTimeInterval;
 
 function chooseDiff(elLevel) {
 
-    if(gTimeInterval || gTimeInterval === null ) cleanData();
-         
-    
+    document.querySelector('table').style.display = 'inline';
+    document.querySelector('.time').style.display = 'inline';
+
+    if (gTimeInterval || gTimeInterval === null) cleanData();
+
     if (elLevel.innerHTML === 'Easy') {
-        gDimension = 4;
+        gDimension = 3;
         creatMat();
         creatBoard();
     }
     if (elLevel.innerHTML === 'Medium') {
-        gDimension = 5;
+        gDimension = 4;
         creatMat();
         creatBoard();
     }
     if (elLevel.innerHTML === 'Difficult') {
-        gDimension = 6;
+        gDimension = 5;
         creatMat();
         creatBoard();
     }
 
 }
 
-function cleanData(){
+function cleanData() {
 
     clearInterval(gTimeInterval);
     var elhead = document.querySelector('h1');
@@ -36,7 +38,7 @@ function cleanData(){
     gTimeInterval = null;
     var eltime = document.querySelector('#time');
     eltime.innerHTML = 'TIME PASSED: ' + 0;
-    gCount=1;
+    gCount = 1;
 }
 
 function creatMat() {
@@ -65,21 +67,21 @@ function creatBoard() {
 }
 
 function cellClicked(elNum) {
-    if(elNum.classList !== 'numClicked')  elNum.classList.remove('numClicked');
+    if (elNum.classList !== 'numClicked') elNum.classList.remove('numClicked');
     if (!gTimeInterval) gTimeInterval = setInterval(runTime, 100);
-    if (+elNum.innerHTML !== gCount){
+    if (+elNum.innerHTML !== gCount) {
         var elHead = document.querySelector('h1');
         elHead.innerText = 'Not The Right Card!'
     }
-     if(+elNum.innerHTML === gCount) {
+    if (+elNum.innerHTML === gCount) {
         elNum.classList.add('numClicked');
-        if(gCount === (gDimension) * (gDimension)) stopGame();
+        if (gCount === (gDimension) * (gDimension)) stopGame();
         else {
             elHead = document.querySelector('h1');
             elHead.innerText = 'Doing Good'
-            gCount++;            
+            gCount++;
         }
-     }
+    }
 }
 
 function runTime() {

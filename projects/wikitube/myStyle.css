@@ -1,10 +1,11 @@
 .headline{
     font-size: 50px;
+    color:orangered;
 }
 
 .container{
     padding: 10px;
-    background-color: rgb(233, 174, 36);
+    background-color: black;
     max-width:1550px;
     width:100%;
     display: flex;
@@ -30,7 +31,7 @@ button{
 
 a{
     text-decoration: none;
-    color: black;
+    color: #989191;
 }
 .videos{
     display: flex;
@@ -81,6 +82,7 @@ a{
     width: 70%;
     justify-content: center;
     margin-top: -50px;
+    color:#989191;
 }
 
 .title{

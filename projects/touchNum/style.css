@@ -1,73 +1,62 @@
-body {
-
-background: #D4BAB0;
-
+body::after {
+    background: url("images.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+       
 }
 
-h1{
+.container{    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttons{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
     margin: 20px;
+    
+}
+
+
+table{
+    border-top: 30px;
+
+}
+h1{
     font-size: 50px;
 }
 
+h2{
+    font-size: 30px;
+}
 .nums {
-    width: 100px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     margin: 10px;
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .num1 {
-    background: #923C7E;
+    background: #8E1E81;
  }
-  .num2 {
-     background: #923C7E;
- }
- .num3 {
-    background:  #923C7E;
- }
- .num4 {
-     background:  #923C7E;
- }
- .num5 {
-    background:  #923C7E;
- }
- .num6 {
-     background:  #923C7E;
- }
- .num7 {
-    background:  #923C7E;
- }
- .num8 {
-     background:  #923C7E;
- }
- .num9 {
-    background:  #923C7E;
- }
- .num10 {
-     background:  #923C7E;
- }
- .num11 {
-    background:  #923C7E;
- }
- .num12 {
-     background:  #923C7E;
- }
- .num13 {
-    background:  #923C7E;
- }
- .num14 {
-     background:  #923C7E;
- }
- .num15 {
-    background:  #923C7E;
- }
- .num16 {
-     background:  #923C7E;
- }
+ 
         
 .numClicked {
-    background:  #BC88B0;
+    background:  #F2ABD2;
 }
 
 .time {
@@ -75,8 +64,16 @@ h1{
     margin: 10px;
 }
 
-.button{
-    height: 50px;
-    width: 90px;
-    margin: 10px;
+
+.level{
+
+    width:200px ;
+    height:50px;
+    background-color: #E7D6EC;
+    border: 1px solid gray;
+
+}
+
+.nums:hover{
+    cursor: pointer;
 }

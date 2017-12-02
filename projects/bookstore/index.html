@@ -15,11 +15,32 @@
 </head>
 
 <body onload=initStore()>
+    <div class="modal1" style="display:none">
+        <div class="modal-flex">
+            <div class="close"><span onclick="closeModal()" id="x">X</span> </div>
+
+            Price:<input id="price" class="box" type="text" class="form-control" aria-label="Text input with radio button">            Title:
+            <input id="title" class="box" type="text" class="form-control" aria-label="Text input with radio button"> Desc:
+            <div class="box">
+                <textarea id="desc" name="textarea" rows="5" cols="50"></textarea>
+            </div>
+
+            Insert picture: <input id="pic" class="box" type="text" name="img">
+
+
+
+            <button class="doneButton" onclick="addBook()" type="button">Done</button>
+
+        </div>
+
+    </div>
+
+
     <div class="container">
         <h1 onclick="sortBooks()">
             <bold>My Bookstore</bold>
         </h1>
-        <button onclick="newBook() " type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add New Book</button></td>
+        <button onclick="newBook()" class="btn btn-primary" data-target="#exampleModal">Add New Book</button></td>
         <h6 onclick="sortName()">Sort By Name</h6>
         <h6 onclick="sortPrice()">Sort By Price</h6>
 
@@ -47,17 +68,22 @@
             </ul>
         </nav>
 
-        <!-- Modal -->
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         </div>
+
+
+
+
+
         <!-- New Modal -->
-        <div class="modal fade" id="newExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="newExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                               </button>
+                                                    <span aria-hidden="true">&times;</span>
+                                            </button>
                     </div>
                     <div class="modal-body">
                         </br>
@@ -69,17 +95,15 @@
                         <button class="doneButton" onclick="newBook()" type="button">Done</button>
                         <img src="img/' + gBooks[0].Id + '.jpg">
                     </div>
-                    <div class="modal-footer">
-                    </div>
+                </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>
-
+    </div> -->
         <script src="lib/jquery/jquery.js"></script>
         <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
         <script src="js/bookStore.js"></script>
-
-    </div>
 </body>
 
 </html>

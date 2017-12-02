@@ -30,13 +30,14 @@ function showColors(colorSamples) {
 
     colorSamples.forEach(function (item, i) {
         var elcolor = document.querySelector('.' + item);
-        if (elcolor.classList === 'chosenColor') elcolor.classList.remove('chosenColor');
-        else {
+        setTimeout(function () {
+            elcolor.classList.add('chosenColor');
             setTimeout(function () {
-                elcolor.classList.add('chosenColor');
-            }, (i + 1) * 1000);
-        }
+                elcolor.classList.remove('chosenColor');
+            }, 500);
+        }, (i + 1) * 1000);
     });
+
 }
 
 function cellClicked(elCell) {
@@ -55,7 +56,6 @@ function cellClicked(elCell) {
 
 function restart() {
     colorSamples = [];
-    // click = 0;
     gTurn = 1;
     randColors();
     var elHead = document.querySelector('h1');

@@ -19,7 +19,7 @@
 }
 
 .box{
-    width:200px;
+    width:50%;
 }
 
 body{
@@ -66,6 +66,50 @@ font-size: 30px;
     margin:5px;
     font-size: 30px;
 }
+
+
+span, h6:hover{
+cursor: pointer;
+}
+
+.modal1{
+   width: 500px;
+   height: 500px;
+   margin-left:400px;;
+    background-color: white;
+    position: fixed; 
+}
+
+.modal-flex{
+    display: flex;
+    flex-direction: column;  
+    margin-left: 10px;
+}
+.input-modal{
+    display: inline;
+}
+
+.close-modal{
+    width: 120px;
+    margin: 10px;
+}
+
+.doneButton{
+    width:100px;
+    height: 30px;
+}
+
+span{
+    margin-bottom: 30px;
+}
+
+.close{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
 
 
 

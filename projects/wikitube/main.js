@@ -7,9 +7,7 @@ var gValue = '';
 function displaySearch() {
     var elSearch = document.querySelector('input');
     gValue = elSearch.value;
-    console.log(gValue)
     document.querySelector('.videos').innerHTML = '';
-    document.querySelector('.wiki-info').innerHTML = '';
     elSearch.value = '';
     getData();
 }
@@ -50,7 +48,6 @@ function playVideo(videoID, videoTitle) {
 }
 
 function searchWikiData(videoTitle) {
-    console.log('videoTitle', videoTitle)
     fetch(`https://en.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=${videoTitle}&limit=5`)
         .then((res) => {
             return res.json();
@@ -69,11 +66,12 @@ function searchWikiData(videoTitle) {
 }
 
 function showData(info) {
-    console.log('info', info)
+    console.log('indo',info)
     var elInfo = document.querySelector('.wiki-info');
-    console.log('elInfo.innerHTML',elInfo.innerHTML)
-    if (elInfo.innerHTML) return;
+
+    if (!elInfo.innerHTML) return;
     else {
+        elInfo.innerHTML='';
         var strHtml = `
             <div>
             <p class="title" >${info[0]}</p>
@@ -86,7 +84,3 @@ function showData(info) {
     }
 }
 
-
-function closeInfo() {
-    document.querySelector('.wiki-info').innerHTML = '';
-}

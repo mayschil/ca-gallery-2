@@ -9,20 +9,30 @@
 </head>
 
 <body>
-    <h1>Choose Level</h1>
-<h2 id="time" class="time">TIME PASSED</h2>
-<button id="easyLevel" class="button" onclick="chooseDiff(this)">Easy</button>
-<button id="mediumLevel" class="button" onclick="chooseDiff(this)">Medium</button>
-<button id="difficultLevel" class="button" onclick="chooseDiff(this)">Difficult</button>
-
-    <table  border="1">
-        
-        <tbody id="board" >
-
-        </tbody>
 
 
-    </table>
+    <div class="container">
+        <div class="head">
+            <h1>Choose Level</h1>
+        </div>
+        <div class="time-div">
+            <h2 id="time" class="time" style="display:none">TIME PASSED</h2>
+        </div>
+
+        <div class="buttons">
+            <button class="level" id="easyLevel" class="button" onclick="chooseDiff(this)">Easy</button>
+            <button class="level" id="mediumLevel" class="button" onclick="chooseDiff(this)">Medium</button>
+            <button class="level" id="difficultLevel" class="button" onclick="chooseDiff(this)">Difficult</button>
+        </div>
+        <div class="tb">
+            <table border="1" style="display:none">
+                <tbody id="board">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
 
 
     <script src="touchNum.js"></script>

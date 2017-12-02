@@ -229,24 +229,30 @@ function nextPage() {
 
 function newBook() {
 
-    var name = document.querySelector('#title');
-    var newTitle = name.value;
-    // console.log('newTitle', newTitle)
-    var price = document.querySelector('#price');
-    var newPrice = price.value;
-    // console.log('newPrice', newPrice)
-    var desc = document.querySelector('#desc');
-    var newDesc = desc.value;
-    // console.log('newDesc', newDesc)
+    document.querySelector('.modal1').style.display = 'block';
 
-    console.log(newTitle, newPrice, newDesc)
-    addBook(newTitle, newPrice, newDesc);
 }
 
-function addBook(name, price, description) {
-    console.log(name, price, description)
+function addBook() {
+
+    var name = document.querySelector('#title').value;
+    // var newTitle = name.value;
+    var price = document.querySelector('#price').value;
+    // var newPrice = price.value;
+    var desc = document.querySelector('#desc').value;
+    // var newDesc = desc.value;
 
     var id = gBooks.length
-    gBooks.push({ Id: id + 1, Title: name, Price: price, description: description });
+    gBooks.push({ Id: id + 1, Title: name, Price: price, description: desc });
     renderPage(3);
+}
+
+
+
+function closeModal() {
+
+    document.querySelector('#title').value = '';
+    document.querySelector('#price').value = '';
+    document.querySelector('#desc').value = '';
+    document.querySelector('.modal1').style.display = 'none';
 }

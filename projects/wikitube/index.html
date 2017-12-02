@@ -30,9 +30,17 @@
             </div>
         </div>
     </main>
+    <script>
+        document.querySelector('input')
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.querySelector('button').click();
+                }
+            });
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
 
 </html>
-

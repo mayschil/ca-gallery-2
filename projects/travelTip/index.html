@@ -15,7 +15,7 @@
         <div class="right-head">
             <div class="search-div">
                 <div>
-                    <input type="text">
+                    <input class="search" type="text">
                     <button class="btn-location" onclick="showMyLocation()">Search</button>
                 </div>
                 <div><button class="btn-location" onclick="getPosition()">My Location</button></div>
@@ -35,7 +35,7 @@
     <div class="map">
         <div id="map" style="width:100%;height:500px;"></div>
     </div>
-    
+
     <!-- <h3 class="location"></h3> -->
 
 
@@ -62,6 +62,16 @@
     </table> -->
 
     <p id="locationError"></p>
+    <script>
+        document.querySelector('.search')
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.querySelector('.btn-location').click();
+                }
+            });
+    </script>
+
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs">
 

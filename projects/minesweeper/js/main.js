@@ -1,12 +1,13 @@
 'use strict'
-console.log('hiiiiiiiiiiiiiiii')
+
+
 var gBoard;
-var gDimension = 8;
+var gDimension;
 var gTimer;
-var gCountBombs = 0;
+var gCountBombs ;
 var currTime = 0;
 var gRightClick;
-var count;
+var gChecks=0;
 var gCountOfEmptySpace;
 
 window.oncontextmenu = function () {
@@ -20,16 +21,22 @@ window.oncontextmenu = function () {
 
 // CR: Better solution is just to have a gLevel array and pass the index of the wanted level.
 function chooseLevel(elLevel) {
-    
+
+    document.querySelector('table').style.display = 'block';
+    document.querySelector('.timer').style.display = 'block';
+
     if (elLevel.innerHTML === 'Beginner') {
+        gCountBombs = 0;
         gDimension = 4;
         restartGame();
     }
     if (elLevel.innerHTML === 'Medium') {
+        gCountBombs = 0;
         gDimension = 6;
         restartGame();
     }
     if (elLevel.innerHTML === 'Expert') {
+        gCountBombs = 0;
         gDimension = 8;
         restartGame()
     }
@@ -40,34 +47,22 @@ function chooseLevel(elLevel) {
 // var negsCount = setMinesNegsCount();
 // renderBoard(negsCount, '.gameBoard');
 function restartGame() {
-    // console.log()
-    // if (gTimer) {
-    //     clearInterval(gTimer);
-    //     gTimer = null;
-    //     gCountBombs = 0;
-    //     currTime=0;
-    //     gBoard = buildBoard();
-    //     var negsCount = setMinesNegsCount();
-    //     renderBoard(negsCount, '.gameBoard');
-    //     var elHead = document.querySelector('h1');
-    //     elHead.innerText = 'Minesweeper';
-    // }
-    // else 
-    {
 
-      
-        
-        gBoard = buildBoard();
-        var negsCount = setMinesNegsCount();
-        renderBoard(negsCount, '.gameBoard');
-    }
+    document.querySelector('h1').innerHTML = 'Minesweeper';
+
+    var eltime = document.querySelector('.seconds');
+    eltime.innerHTML = '';
+    document.querySelector('.bombs').innerHTML = '';
+    gBoard = buildBoard();
+    var negsCount = setMinesNegsCount();
+    renderBoard(negsCount, '.gameBoard');
 }
 
 function startTime() {
 
-    var eltime = document.querySelector('.timer');
+    var eltime = document.querySelector('.seconds');
     currTime += 1;
-    eltime.innerHTML = 'TIME PASSED: ' + currTime + ' seconds';
+    eltime.innerHTML = currTime;
 }
 
 function buildBoard() {
@@ -77,20 +72,27 @@ function buildBoard() {
         for (var j = 0; j < gDimension; j++) {
             board[i][j] = '';
             var rand = Math.random();
-            if (rand > 0.9) {
+            if (rand > 0.85) {
                 board[i][j] = '💣';
                 gCountBombs++;
             }
         }
     }
+    document.querySelector('.bomb-count').style.display = 'block';
+    document.querySelector('.bombs').innerHTML = gCountBombs;
     return board;
 }
 
 function rightClick(elCell) {
-
+   console.log('gCountBombs',gCountBombs)
     // elCell.classList.add('maybeleBomb');
-    elCell.innerText = '🏴';
-    count++;
+    // elCell.innerText = '🏴';
+    elCell.innerHTML = '<i class="fa fa-flag-o" aria-hidden="true"></i>'
+    if (elCell.classList.contains('markBomb')) {
+        gChecks++;
+        checkGameOver();
+    } 
+       
 }
 
 // CR: Based on your model. the id cell-bomb is not necessery
@@ -136,14 +138,10 @@ function setMinesNegsCount() {
 function countNegs(cellI, cellJ) {
     var count = 0;
     for (var i = cellI - 1; i <= cellI + 1; i++) {
-
         if (i < 0 || i >= gBoard.length) continue;
-
         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
-
             if (j < 0 || j >= gBoard[i].length) continue;
             if (i === cellI && j === cellJ) continue;
-
             if (gBoard[i][j] === '💣') count++;
         }
     }
@@ -180,18 +178,20 @@ function cellClicked(elCell) {
 }
 
 function checkGameOver() {
+    console.log('im hereeeee')
+    console.log(gChecks,gCountBombs)
     var k = 0;
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard.length; j++) {
             if (gBoard[i][j].cellMarked) k++
         }
     }
-
-    if (count === gCountBombs && (k + gCountBombs === gDimension * gDimension)) {
+    if (gChecks === gCountBombs && (gChecks + k === gBoard.length*gBoard.length)) {
+        console.log(gChecks,gCountBombs)
         gameOver();
-        return;
     }
-
+    
+return;    
 }
 
 function maybeBomb(elCell) {
@@ -258,11 +258,7 @@ function gameOver() {
     elHead.innerText = 'GAME OVER!!!'
     clearInterval(gTimer);
     gTimer = null;
-    currTime=0;
-    console.log('gTimer',gTimer)
-    console.log('currTime',currTime)
-    var eltime = document.querySelector('.timer');
-    eltime.innerHTML = '';
+    currTime = 0;
     return;
 }
 

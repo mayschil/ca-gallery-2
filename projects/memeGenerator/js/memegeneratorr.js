@@ -1,7 +1,7 @@
 'use strict';
 
-var ctx;
-var canvas = document.getElementById('canvas');
+var gCtx;
+var gCanvas = document.getElementById('canvas');
 
 var gMeme = {
     src: '',
@@ -37,6 +37,34 @@ var gMeme = {
     }]
 };
 
+var imageLoader = document.querySelector('.img-url');
+console.log('imageLoader',imageLoader)
+imageLoader.addEventListener('change', handleImage, false);
+
+
+function handleImage(e){
+    console.log('im here')
+    var reader = new FileReader();
+    reader.onload = function(event){
+        var img = new Image();
+        img.src = event.target.result;
+        console.log(' img.src', img.src)
+        img.onload = function(){
+            gCanvas.width = img.width;
+            gCanvas.height = img.height;
+            gCtx.drawImage(img,0,0,gCanvas.width,gCanvas.height);
+            // setGMeme();
+            gMeme.elImg = img;
+        }
+    }
+    
+    reader.readAsDataURL(e.target.files[0]);
+    // var elSection = document.querySelector('.meme-section');
+    // elSection.classList.remove('hide-meme-section')     
+}
+
+
+
 function updateText(idx) {
     gMeme.txts[idx].line = event.target.value;
     drawMeme();
@@ -49,16 +77,16 @@ function drawMeme() {
     gMeme.txts[0].color = (!color1Selected ? '#000000' : color1Selected);
     gMeme.txts[1].color = (!color2Selected ? '#000000' : color2Selected);
 
-    ctx.drawImage(gMeme.elImg, 0, 0, gMeme.originalWidth, gMeme.originalHeight);
-    ctx.font = gMeme.ctxFontLine;
+    gCtx.drawImage(gMeme.elImg, 0, 0, gMeme.originalWidth, gMeme.originalHeight);
+    gCtx.font = gMeme.ctxFontLine;
     gMeme.txts.forEach(function (txt) {
-        ctx.fillStyle = txt.color;
-        ctx.ctxFontLine = txt.ctxFontLine;
-        ctx.font = txt.ctxFontLine;
-        ctx.shadowColor = txt.color;
-        ctx.shadowBlur = txt.ctxShadowBlur;
-        ctx.textAlign = txt.align;
-        ctx.fillText(txt.line, txt.x, txt.y);
+        gCtx.fillStyle = txt.color;
+        gCtx.ctxFontLine = txt.ctxFontLine;
+        gCtx.font = txt.ctxFontLine;
+        gCtx.shadowColor = txt.color;
+        gCtx.shadowBlur = txt.ctxShadowBlur;
+        gCtx.textAlign = txt.align;
+        gCtx.fillText(txt.line, txt.x, txt.y);
 
     });
 }
@@ -100,10 +128,10 @@ function toggleShadow(txtLine) {
 
     if (!gMeme.txts[idx].ctxShadowBlur) {
         gMeme.txts[idx].ctxShadowColor = gMeme.txts[idx].color;
-        ctx.ctxShadowColor = gMeme.txts[idx].ctxShadowBlur = 9;
+        gCtx.ctxShadowColor = gMeme.txts[idx].ctxShadowBlur = 9;
     }
     else {
-        ctx.ctxShadowColor = gMeme.txts[idx].ctxShadowBlur = 0;
+        gCtx.ctxShadowColor = gMeme.txts[idx].ctxShadowBlur = 0;
     }
     drawMeme();
 }
@@ -151,11 +179,11 @@ function makeMeme(elImg) {
     img.src = gMeme.src;
 
     img.onload = function () {
-        canvas = document.getElementById('canvas');
-        ctx = canvas.getContext('2d');
-        ctx.canvas.width = gMeme.originalWidth;
-        ctx.canvas.height = gMeme.originalHeight;
-        ctx.drawImage(img, 0, 0, gMeme.originalWidth, gMeme.originalHeight);
+        gCanvas = document.getElementById('canvas');
+        gCtx = gCanvas.getContext('2d');
+        gCtx.canvas.width = gMeme.originalWidth;
+        gCtx.canvas.height = gMeme.originalHeight;
+        gCtx.drawImage(img, 0, 0, gMeme.originalWidth, gMeme.originalHeight);
     };
 }
 
@@ -167,7 +195,7 @@ function showEditer() {
 }
 
 function downloadImg(elLink) {
-    elLink.href = canvas.toDataURL();
+    elLink.href = gCanvas.toDataURL();
     elLink.download = 'myMeme.jpg';
     
 }

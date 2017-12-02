@@ -1,21 +1,23 @@
 
 
 #screen{
-   width:300px;
+   
    height: 90px;
    margin: 5px;
    font-size: 30px;
-   border-width: 1px;
    border-radius: 10px;
+   border:1px solid rgb(23, 162, 184);
 }
- 
+/* 
+.container{
+    display: flex;
+
+}
+  */
 #equal{
 height:80px;
 }
 
-/* .num-0{
-    border-collapse: collapse;
-} */
 
 td > button{
     width: 100%;
@@ -24,8 +26,10 @@ td > button{
 table{
 
 border:20px;
-margin-left:520px;
-margin-top:200px;
+/* margin-left:520px;
+margin-top:200px; */
+margin: 0 auto;
+margin-top: 200px;
 
 }
 
@@ -36,4 +40,9 @@ margin-top:200px;
 
 #sqrt:after {
     content: ' \221A';
+}
+
+form{
+    display: flex;
+    flex-direction: row;
 }

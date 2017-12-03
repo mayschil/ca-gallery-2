@@ -78,6 +78,9 @@ function buildBoard() {
             }
         }
     }
+    board[2][2] = '💣';
+    gCountBombs++;
+
     document.querySelector('.bomb-count').style.display = 'block';
     document.querySelector('.bombs').innerHTML = gCountBombs;
     return board;

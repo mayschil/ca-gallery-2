@@ -56,11 +56,8 @@ function handleImage(e){
             // setGMeme();
             gMeme.elImg = img;
         }
-    }
-    
-    reader.readAsDataURL(e.target.files[0]);
-    // var elSection = document.querySelector('.meme-section');
-    // elSection.classList.remove('hide-meme-section')     
+    }    
+    reader.readAsDataURL(e.target.files[0]);   
 }
 
 

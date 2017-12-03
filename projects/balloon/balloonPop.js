@@ -26,7 +26,7 @@ function startGame() {
         // balloon.speed += num;                         
         elBalloon.style.bottom = balloon.bottom + 'px';
     }
-    }, 1000);
+    }, 400);
     return; 
 }
 
@@ -38,13 +38,13 @@ function restartGame(){
 }
 
 function createBalloons() {
-    var balloon1 = { bottom: -650, speed: 50 };
+    var balloon1 = { bottom: -650, speed: 20 };
     gBalloons.push(balloon1);
     var balloon2 = { bottom: -650, speed: 30 };
     gBalloons.push(balloon2);  
     var balloon3 = { bottom: -750, speed: 20 };
     gBalloons.push(balloon3);  
-    var balloon4 = { bottom: -750, speed: 70 };
+    var balloon4 = { bottom: -750, speed: 20 };
     gBalloons.push(balloon4);          
 }
 

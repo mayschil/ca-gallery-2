@@ -5,10 +5,10 @@ export default {
     template: `
         <section class="note">
         
-        <div class="note-div"></div>
-          <div @click="goToNote(note.id)">   {{note.title}}  </div>
-          </br>
-          <div class="text">  {{note.text}} </div> 
+         <div  class="note-div"></div>
+             <div @click="goToNote(note.id)">   {{note.title}}  </div>
+             </br>
+         <div @click="goToNote(note.id)" class="text">  {{note.text}} </div> 
           <i class="fa fa-trash-o" aria-hidden="true" @click="deletNote(note.id)"></i> 
         </section>
     `,

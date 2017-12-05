@@ -13,7 +13,8 @@ function initPage() {
     { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
     { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
     { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' },
-    { id: 'travelTip', name: 'Travel Tip', title: 'Get information of your location', decs: 'location and weather info' }
+    { id: 'travelTip', name: 'Travel Tip', title: 'Get information of your location', decs: 'location and weather info' },
+    { id: 'myNotes', name: 'Notes', title: 'Store your To-dos and thoughts', decs: '' }
 ];
     render();
 }

@@ -1,0 +1,29 @@
+.book-details {
+    background-color: lightsteelblue;
+    padding: 20px;
+    text-align: center;
+}
+
+.book-details h1 span {
+    font-size: 0.8em;
+    color:darkcyan;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+i{
+    height: 20px;
+    width:20px;
+    color:red;
+}
+
+
+ul{
+    list-style: none;
+}
+
+nav{
+    text-decoration: none;
+}

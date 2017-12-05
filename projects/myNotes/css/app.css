@@ -111,7 +111,7 @@ i:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 220px;    
+    height: 240px;    
 }
 
 
@@ -143,12 +143,21 @@ h1{
 }
 
 .save-btn{
-    margin-top: 20px
+    margin-top: 20px;
+    width: 82px;
+    
 }
 
 .back-btn{
 
     margin-bottom: 20px
+}
+
+.top-left{
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    
 }
 
 @media screen and (max-width: 480px) {

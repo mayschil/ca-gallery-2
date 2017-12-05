@@ -5,15 +5,19 @@ export default {
 
     template: `
             <section class="chosen-note">
-                <router-link to="/" style="textDecoration:none"> 
-                    <button class="back-btn" >Go back </button>
-                 </router-link>    
+            <div class="top-left">
+            <i class="fa fa-trash-o" aria-hidden="true" @click="deletNote(note.id)"></i>
+            <router-link to="/" style="textDecoration:none"> 
+                <button class="back-btn" >Go back </button>
+             </router-link>    
+             </div>
+                
                 <form class="csn-note" @submit.prevent>
                 <div><input type="text" v-model="note.title" autofocus placeholder='title'></div>
                     
                     <div><input  type="color" value="#000000" v-model="note.color" autofocus></div>
                     
-                    <div><textarea :style="{color: note.color}"  type="text" v-model="note.text" autofocus placeholder='text'> </textarea></div>           
+                    <div><textarea  rows="5" cols="50" :style="{color: note.color}"  type="text" v-model="note.text" autofocus placeholder='text'> </textarea></div>           
                     
                     <div>Priority: <select v-model.number="note.priority">
                     <option v-for="i in 5" :value="i">{{i}}</option autofocus>
@@ -22,7 +26,7 @@ export default {
                     <div><img :src="note.img"></div>
                     
                     <button class="save-btn" @click="saveChanges">Save</button>
-                    <i class="fa fa-trash-o" aria-hidden="true" @click="deletNote(note.id)"></i>
+                    
                 </form>
             </section>
         `,

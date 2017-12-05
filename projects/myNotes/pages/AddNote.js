@@ -19,7 +19,7 @@ export default {
             </div>
             
             <div>
-                <select v-model.number="noteToUpdate.priority">
+            Priority: <select v-model.number="noteToUpdate.priority">
                  <option v-for="i in 5" :value="i">{{i}}</option autofocus>
                 </select>
             </div>

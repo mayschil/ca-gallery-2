@@ -91,7 +91,7 @@ i:hover{
     color:black;
 }
 
-.back{
+.back-btn{
     border-radius: 15px;
     border: none;
     height:30px;
@@ -102,21 +102,53 @@ i:hover{
 .chosen-note{
     display: flex;
     flex-direction: column;
+    width: 312px;
+    margin: 15px;
+    height: 375px;    
+}
+
+.csn-note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 220px;    
 }
 
 
 
-
-form{
- 
+.add-note-frm{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 220px;;
     
 }
 
 h1{
     font-size: 40px;
     color:brown;
+}
+
+.box{
+    height: 500px;
+}
+
+.add-note{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    
+}
+
+.save-btn{
+    margin-top: 20px
+}
+
+.back-btn{
+
+    margin-bottom: 20px
 }
 
 @media screen and (max-width: 480px) {

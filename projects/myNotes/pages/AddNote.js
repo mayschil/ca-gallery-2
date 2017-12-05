@@ -3,9 +3,13 @@ import NoteService from '../services/NoteService.js'
 export default {
     template: `
     <section class="add-note">
-        <router-link to="/" style="textDecoration:none"> 
-            <button class="back" >Go back </button>
-        </router-link>    
+        <div >
+            <router-link to="/" style="textDecoration:none"> 
+                <button class="back-btn" >Go back </button>
+            </router-link>  
+        </div>
+
+          
         <form @submit.prevent>
             <div>
                 <input class="input" type="text" v-model="noteToUpdate.title" autofocus placeholder='title'>
@@ -29,7 +33,7 @@ export default {
             </div>
             
         </form>
-        <button @click="saveNote">Save</button>
+        <button class="save-btn" @click="saveNote">Save</button>
     </section>
     `,
     data() {

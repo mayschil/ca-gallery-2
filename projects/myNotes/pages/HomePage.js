@@ -9,7 +9,7 @@ export default {
             <div class="head">
                 <div class="left-icons">
                     <router-link to="/" style="textDecoration:none"> 
-                        <button class="back" >Go back </button>
+                        <button class="back-btn" >Go back </button>
                     </router-link>    
                 <button class="sort" @click="sortByP">Sort by priority </button>
                 </div>

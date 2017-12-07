@@ -22,7 +22,7 @@ export default {
          
            <div>
            <input  type="color" value="#000000" v-model="note.color"  autofocus>   
-       </div>       
+            </div>       
            
            <div class="field">
              <label class="label">Message</label>

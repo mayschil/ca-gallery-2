@@ -338,7 +338,7 @@ function deleteLocationChosen(locationId) {
     console.log('locationId', locationId)
     return new Promise((resolve, reject) => {
         var locationIdx = locations.findIndex(location => location.id === locationId)
-        locations.splice(locationId, 1);
+        locations.splice(locationIdx, 1);
         // getCurrPosition();
         resolve()
     });

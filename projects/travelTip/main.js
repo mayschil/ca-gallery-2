@@ -5,7 +5,6 @@ var gLng;
 
 var gUrl;
 
-
 function initPage() {
     getPosition();
 }
@@ -44,6 +43,8 @@ function copy() {
 
 
 function initMap(lat, lng) {
+    
+
     if (!lat) lat = 32.0749831;
     if (!lng) lng = 34.9120554;
 
@@ -55,15 +56,17 @@ function initMap(lat, lng) {
         }
     );
 
-    var image = 'oldman.png';
+    
     var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
         map: map,
         title: 'You Are Here!',
-        icon: image
+        
+        label: '😁',
+        
     });
-
-    getWeather(lat, lng);
+    
+    // getWeather(lat, lng);
     console.log('im here')
 }
 
@@ -88,6 +91,7 @@ function showMyLocation() {
             return res.json();
         })
         .then((data) => {
+            console.log('data',data)
             var lat = data.results[0].geometry.location.lat;
             var lng = data.results[0].geometry.location.lng;
             getGeoLocation(lat, lng);
@@ -95,19 +99,19 @@ function showMyLocation() {
         })
 }
 
-function getWeather(lat, lon) {
+// function getWeather(lat, lon) {
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=c0a503c32289640d55ec84accda09d5f`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            console.log('temp', data.main.temp)
-            document.querySelector('.temp').innerHTML = data.main.temp;
-            document.querySelector('.weather').innerHTML = data.weather[0].description;
+//     fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=c0a503c32289640d55ec84accda09d5f`)
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             console.log('temp', data.main.temp)
+//             document.querySelector('.temp').innerHTML = data.main.temp;
+//             document.querySelector('.weather').innerHTML = data.weather[0].description;
 
-        })
-}
+//         })
+// }
 
 
 function handleLocationError(error) {
@@ -130,3 +134,17 @@ function handleLocationError(error) {
 }
 
 
+
+// axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ0UHcGBVJHRURyRyk29YNOng&key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs`)
+// .then(res => {
+//     console.log('res', res.data)
+   
+// })
+
+// fetch(`https://cors-anywhere.herokuapp.com/+ https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJrTLr-GyuEmsRBfy61i59si0&key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs`)
+// .then((res) => {
+//     return res.json();
+// })
+// .then((data) => {
+//     console.log('data', data)
+// })

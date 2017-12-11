@@ -43,7 +43,16 @@ export default {
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes, delete it!'
-              }).then((result) => {
+            }).then((result) => {
+                if (result.value) {
+                    swal(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+            res.then(() => {
                 EventBusService.$emit('deleteMail', mailId)
             })
         },

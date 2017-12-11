@@ -32,7 +32,7 @@ export default {
             </div>            
         </section>   
                 `,
-                
+
     data() {
         return {
             notes: [],
@@ -40,33 +40,42 @@ export default {
     },
     created() {
         noteService.getNotes()
-        .then(notes => {
-            this.notes = notes
-        })
-        .catch(err => {
-            this.notes = []
-        })
+            .then(notes => {
+                this.notes = notes
+            })
+            .catch(err => {
+                this.notes = []
+            })
     },
     methods: {
         deleteNote(noteId) {
             swal({
-              title: 'Are you sure?',
-              type: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, delete it!'
+                title: 'Are you sure?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
-              noteService.deleteNote(noteId)
-              .then(_ => {
-                this.$router.push('/note/main')
-              })
-              .catch(err => {
-                console.error('Error deleting');
-              })
+                if (result.value) {
+                    swal(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
             })
-      
-          },
+            res.then(() => {
+                noteService.deleteNote(noteId)
+                    .then(_ => {
+                        this.$router.push('/note/main')
+                    })
+                    .catch(err => {
+                        console.error('Error deleting');
+                    })
+            })
+
+        },
         // deleteNote(noteId) {
         //     noteService.deleteNote(noteId)
         //     .then(_ => {
@@ -77,9 +86,9 @@ export default {
         // },     
         addNote() {
             var newNoteId = noteService.createNote();
-            this.$router.push('/note/' + newNoteId)    
+            this.$router.push('/note/' + newNoteId)
         },
-        
+
         sort(sortBy) {
             switch (sortBy) {
                 case 'date':
@@ -97,7 +106,7 @@ export default {
             return a.priority - b.priority;
         }
     },
-    components:{
+    components: {
         navBar
     },
 }

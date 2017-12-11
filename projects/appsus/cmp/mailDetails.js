@@ -36,8 +36,16 @@ export default {
     },
     methods: {
         emitDeleteMail(mailId) {
-            EventBusService.$emit('deleteMail', mailId)
-            
+            var res = swal({
+                title: 'Are you sure?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                EventBusService.$emit('deleteMail', mailId)
+            })
         },
         markUnread(chosenMail) {
             chosenMail.isRead = false;
@@ -47,7 +55,7 @@ export default {
             // console.log('reply to', chosenMailId)
             this.$router.push('/mail/replyMail/' + chosenMailId)
         }
-    
+
     },
     computed: {
         timeStampToDate() {

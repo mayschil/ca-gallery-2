@@ -49,13 +49,32 @@ export default {
     },
     methods: {
         deleteNote(noteId) {
-            noteService.deleteNote(noteId)
-            .then(_ => {
+            swal({
+              title: 'Are you sure?',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              noteService.deleteNote(noteId)
+              .then(_ => {
+                this.$router.push('/note/main')
+              })
+              .catch(err => {
+                console.error('Error deleting');
+              })
             })
-            .catch(err => {
-                console.error('Error deleting');                                            
-            })
-        },     
+      
+          },
+        // deleteNote(noteId) {
+        //     noteService.deleteNote(noteId)
+        //     .then(_ => {
+        //     })
+        //     .catch(err => {
+        //         console.error('Error deleting');                                            
+        //     })
+        // },     
         addNote() {
             var newNoteId = noteService.createNote();
             this.$router.push('/note/' + newNoteId)    

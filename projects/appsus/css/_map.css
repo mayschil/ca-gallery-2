@@ -127,8 +127,13 @@ li{
     flex-wrap: wrap;
 }
 
+.icon-choose  input {
+    margin: 5px;
+}
 
-
+.control{
+    margin-top: 10px;
+}
 
 
 @media screen and (max-width: 480px) {

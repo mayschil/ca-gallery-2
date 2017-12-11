@@ -54,7 +54,7 @@ h1{
 
 
 .status-bar {
-    background-color: #C5F4BF;
+    background-color: #F79363;
     text-align: center;
     height: 30px;
     width: 60%;
@@ -97,4 +97,8 @@ h1{
 
 .search-bar{
     margin-left: 125px;
+}
+
+.filter-checkbox > label{
+    cursor: pointer;
 }

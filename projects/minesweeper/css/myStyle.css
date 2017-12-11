@@ -21,35 +21,47 @@ body{
     width: 50px;
     height:50px;
     text-align: center;
-   
+    border:none;
 }
 
+.gameBoard td {
+    border:none;
+}
+
+
 .mark0 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: grey;
+    border-radius: 10px;
 }
 .mark1 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: #4713E4;
+    border-radius: 10px;
 }
 .mark2 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: #003422;
+    border-radius: 10px;
 }
 .mark3 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: #F44517;
+    border-radius: 10px;
 }
 .mark4 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: #070330;
+    border-radius: 10px;
 }
 .mark5 {
-    background-color:#6763D0;
+    background-color:#227509;
     color: #545083;
+    border-radius: 10px;
 }
 .markBomb{
-    background-color:#6763D0;
+    background-color:#227509;
+    border-radius: 10px;
 }
 
 .cover{
@@ -57,6 +69,7 @@ body{
     width: 30px;
     height:30px;
     text-align: center;
+  
 }
 
 button{

@@ -4,7 +4,7 @@ function initPage() {
 
     gProj = [{ id: 'simonSays', name: 'Simon Says', title: 'Memory Game', decs: 'Repeat the order of the selected colors' },
     { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: 'Find where the mines are' },
-    { id: 'touchNum', name: 'Touch The Nums', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
+    { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
     { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
     { id: 'calc', name: 'Calculator', title: 'calculator', decs: 'Calculate as you wish' },
     { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },

@@ -14,7 +14,7 @@ function initPage() {
     { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
     { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' },
     { id: 'travelTip', name: 'Travel Tip', title: 'Get information of your location', decs: 'location and weather info' },
-    { id: 'myNotes', name: 'Notes', title: 'Store your To-dos and thoughts', decs: '' },
+    // { id: 'myNotes', name: 'Notes', title: 'Store your To-dos and thoughts', decs: '' },
     { id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' }
 ];
     render();

@@ -1,4 +1,5 @@
 import mailService from '../services/mailService.js'
+import EventBusService from '../services/EventBusService.js';
 
 export default {
     template: `
@@ -21,11 +22,15 @@ export default {
     data() {
         return {
             term: '',
-            type:null,
+            type: null,
             filterMails: [],
         }
     },
-
+    created(){
+        EventBusService.$on('mails', mails => {
+            this.searchMail();
+        })
+    },
     methods: {
         searchMail() {
             if (this.term) {
@@ -41,7 +46,7 @@ export default {
                     })
             }
             else {
-                console.log('this.type',this.type)
+                console.log('this.type', this.type)
                 mailService.filterReadUnread(this.type)
                     .then(mails => {
                         this.filterMails = mails

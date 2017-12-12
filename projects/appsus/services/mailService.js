@@ -100,6 +100,7 @@ function updateMailStatus(mail) {
     return new Promise((resolve, reject) => {
         var idx = mails.findIndex(item => item.id === mail.id)
         mails[idx].isRead = mail.isRead;
+        EventBusService.$emit('mails', mails)
         resolve()
     });
 }
@@ -138,8 +139,10 @@ function filterReadUnread(status) {
         filteredMails = mails.filter(mail => {
             return mail.isRead === status
         })
+        
         return Promise.resolve(filteredMails);
     }
+     
 }
 
 

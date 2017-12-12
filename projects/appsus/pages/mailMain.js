@@ -71,7 +71,7 @@ export default {
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
                         })
-                        mailService.filterReadUnread('all')
+                    mailService.filterReadUnread('all')
                         .then((data) => {
                             this.mails = data;
                         })
@@ -86,6 +86,10 @@ export default {
                                     this.unreadMails = res;
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
+                        })
+                    mailService.filterReadUnread('all')
+                        .then((data) => {
+                            this.mails = data;
                         })
                 }
 

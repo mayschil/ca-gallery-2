@@ -27,9 +27,9 @@ export default {
         }
     },
     created(){
-        EventBusService.$on('mails', mails => {
-            this.searchMail();
-        })
+        // EventBusService.$on('mails', mails => {
+        //     this.searchMail();
+        // })
     },
     methods: {
         searchMail() {

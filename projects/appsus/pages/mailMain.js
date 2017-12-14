@@ -71,10 +71,10 @@ export default {
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
                         })
-                    mailService.filterReadUnread('all')
-                        .then((data) => {
-                            this.mails = data;
-                        })
+                    // mailService.filterReadUnread('all')
+                    //     .then((data) => {
+                    //         this.mails = data;
+                    //     })
                 }
                 else {
                     this.chosenMail = this.mails[0]
@@ -87,10 +87,10 @@ export default {
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
                         })
-                    mailService.filterReadUnread('all')
-                        .then((data) => {
-                            this.mails = data;
-                        })
+                    // mailService.filterReadUnread('all')
+                    //     .then((data) => {
+                    //         this.mails = data;
+                    //     })
                 }
 
                 EventBusService.$on('deleteMail', emailId => {

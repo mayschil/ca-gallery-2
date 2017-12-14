@@ -4,7 +4,7 @@ import mailDetails from '../cmp/mailDetails.js';
 import mailList from '../cmp/mailList.js';
 import mailFilter from '../cmp/mailFilter.js';
 import mailStatus from '../cmp/mailStatus.js';
-import EventBusService from '../services/EventBusService.js';
+import eventBusService from '../services/eventBusService.js';
 
 
 
@@ -71,10 +71,6 @@ export default {
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
                         })
-                    // mailService.filterReadUnread('all')
-                    //     .then((data) => {
-                    //         this.mails = data;
-                    //     })
                 }
                 else {
                     this.chosenMail = this.mails[0]
@@ -87,13 +83,9 @@ export default {
                                     // console.log(' this.unreadMails', this.unreadMails)
                                 })
                         })
-                    // mailService.filterReadUnread('all')
-                    //     .then((data) => {
-                    //         this.mails = data;
-                    //     })
                 }
 
-                EventBusService.$on('deleteMail', emailId => {
+                eventBusService.$on('deleteMail', emailId => {
                     this.deleteMail(emailId)
                 });
             })

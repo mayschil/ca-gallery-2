@@ -1,4 +1,4 @@
-import EventBusService from '../services/EventBusService.js'
+import eventBusService from '../services/eventBusService.js'
 
 export default {
     template: `
@@ -15,27 +15,10 @@ export default {
             mails: [],
         }
     },
-    methods: {
+     methods: {
         emitDeleteMail(mailId) {
-            var res = swal({
-                title: 'Are you sure?',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.value) {
-                    swal(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                }
-            })
-            res.then(() => {
-                EventBusService.$emit('deleteMail', mailId)
-            })
+            eventBusService.$emit('deleteMail', mailId)
+            // this.mails = mailService.deleteMail(mailId);
         },
     },
     computed: {

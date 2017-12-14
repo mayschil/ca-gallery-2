@@ -1,6 +1,6 @@
 import mailPreview from '../cmp/mailPreview.js'
 import mailService from '../services/mailService.js';
-import EventBusService from '../services/EventBusService.js';
+
 
 export default {
     template: `
@@ -15,11 +15,6 @@ export default {
             </ul>  
         </section>
     `,
-    //  created(){
-    //     EventBusService.$on('mails', mails => {
-    //         this.mails = mails;
-    //     })
-    // },
     methods: {
         mailClicked(mail) {
             if(mail.isRead === false) {

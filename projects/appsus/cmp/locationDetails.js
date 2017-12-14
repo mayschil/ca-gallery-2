@@ -17,8 +17,8 @@ export default {
                     
                 </div>
         
-                <div class="field">
-                    <label class="label">Description</label>
+                <div class="field-description">
+                    <label class="label-description">Description</label>
                     {{location.description}}
                 </div>
         

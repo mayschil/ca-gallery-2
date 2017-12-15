@@ -62,14 +62,14 @@ export default {
   data() {
     return {
       isComposeActive: true,
-      note: { 
-              title: '',
-              text: '',
-              image: '',
-              color: '#000000',
-              priority: 3,
-              timeCreated: Date.now()
-            },
+      note: {
+        title: '',
+        text: '',
+        image: '',
+        color: '#000000',
+        priority: 3,
+        timeCreated: Date.now()
+      },
       noteId: +this.$route.params.noteId,
       isNew: '',
     }
@@ -108,23 +108,33 @@ export default {
       }
     },
     deleteNote(noteId) {
-      noteService.deleteNote(noteId)
+      swal({
+        title: 'Are you sure?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        noteService.deleteNote(noteId)
         .then(_ => {
           this.$router.push('/note/main')
         })
         .catch(err => {
           console.error('Error deleting');
         })
+      })
+
     },
     cancelNote(noteId) {
       if (this.isNew) {
-      noteService.deleteNote(noteId)
-        .then(_ => {
-          this.$router.push('/note/main')
-        })
-        .catch(err => {
-          console.error('Error deleting');
-        })
+        noteService.deleteNote(noteId)
+          .then(_ => {
+            this.$router.push('/note/main')
+          })
+          .catch(err => {
+            console.error('Error deleting');
+          })
       } else this.$router.push('/note/main');
     }
   },

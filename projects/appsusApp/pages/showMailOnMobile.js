@@ -1,5 +1,5 @@
 import mailService from '../services/mailService.js';
-import eventBusService from '../services/eventBusService.js'
+import EventBusService from '../services/EventBusService.js'
 
 
 export default {
@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         emitDeleteMail(mailId) {
-            eventBusService.$emit('deleteMail', mailId);
+            EventBusService.$emit('deleteMail', mailId);
             this.$router.push('/mail/main');
         },
         markUnread(chosenMail) {

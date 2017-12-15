@@ -1,4 +1,4 @@
-import eventBusService from '../services/eventBusService.js'
+import EventBusService from '../services/EventBusService.js'
 
 
 const GOOGLE_API_KEY = 'AIzaSyCkGXo73iO3SNrjIp9hxptFfE5duOCgKk4';
@@ -6,6 +6,7 @@ var gLat;
 var gLng;
 var gMap;
 var gCurrPosition = {};
+var gMarkers;
 
 
 const ICON_AMBULANCE = {
@@ -42,7 +43,7 @@ var locations = [
     {
         id: 0,
         name: 'Arnold',
-        description: 'Quis est mollit ex tempor in ex ea aute eiusmod do aute enim veniam duis.',
+        description: '',
         photo: 'arnold.jpg',
         lat: 32.1047547,
         lng: 34.8197589,
@@ -51,7 +52,7 @@ var locations = [
     {
         id: 1,
         name: 'Assuta',
-        description: 'Officia commodo consectetur cillum reprehenderit enim officia aute officia velit reprehenderit laborum nostrud proident.',
+        description: '',
         photo: 'assuta.jpg',
         lat: 32.1079742,
         lng: 34.8307266,
@@ -60,7 +61,7 @@ var locations = [
     {
         id: 2,
         name: 'David Yalin',
-        description: 'Sint ea cupidatat laborum amet cupidatat minim ea et et.',
+        description: '',
         photo: 'david-yalin.jpg',
         lat: 32.1116409,
         lng: 34.8197052,
@@ -69,7 +70,7 @@ var locations = [
     {
         id: 3,
         name: 'Coding Academy',
-        description: 'Quis consectetur duis officia aliqua.',
+        description: '',
         photo: 'coding-academy.png',
         lat: 32.0878925,
         lng: 34.8030375,
@@ -78,7 +79,7 @@ var locations = [
     {
         id: 4,
         name: 'Benedict Tel-Aviv',
-        description: 'Cupidatat cillum quis incididunt ipsum velit fugiat eu.',
+        description: '',
         photo: 'benedict.jpg',
         lat: 32.0636727,
         lng: 34.772772,
@@ -87,7 +88,7 @@ var locations = [
     {
         id: 5,
         name: 'Ramat Aviv Mall',
-        description: 'Lorem exercitation sint mollit nostrud.',
+        description: '',
         photo: 'ramat-aviv-mall.jpg',
         lat: 32.1122669,
         lng: 34.7958357,
@@ -108,7 +109,7 @@ function initMap(lat, lng) {
     });
     marker.addListener('click', function () {
         console.log('hi85')
-        eventBusService.$emit('selectLocation', location)
+        EventBusService.$emit('selectLocation', location)
     })
     // return Promise.resolve();
 }
@@ -124,23 +125,23 @@ function getCurrPosition() {
 function showLocation(position) {
     gCurrPosition.lat = position.coords.latitude
     gCurrPosition.lng = position.coords.longitude
-    eventBusService.$emit('defaultLocation', gCurrPosition)
+    EventBusService.$emit('defaultLocation', gCurrPosition)
     initMap(gCurrPosition.lat, gCurrPosition.lng);
 }
 
 function handleLocationError(error) {
     switch (error.code) {
         case 0:
-            eventBusService.$emit('errorMsg', 'There was an error while retrieving your location: ' + error.message)
+            EventBusService.$emit('errorMsg', 'There was an error while retrieving your location: ' + error.message)
             break;
         case 1:
-            eventBusService.$emit('errorMsg', 'The user didn\'t allow this page to retrieve a location.')
+            EventBusService.$emit('errorMsg', 'The user didn\'t allow this page to retrieve a location.')
             break;
         case 2:
-            eventBusService.$emit('errorMsg', 'The browser was unable to determine your location: ' + error.message)
+            EventBusService.$emit('errorMsg', 'The browser was unable to determine your location: ' + error.message)
             break;
         case 3:
-            eventBusService.$emit('errorMsg', 'The browser timed out before retrieving the location.')
+            EventBusService.$emit('errorMsg', 'The browser timed out before retrieving the location.')
             break;
     }
 }
@@ -150,6 +151,7 @@ function getLocations() {
     return Promise.resolve(locations);
     // return Promise.reject();
 }
+
 
 function displayMap(lat, lng ,selectedLocation) {
     var location = { lat, lng ,selectedLocation}
@@ -172,7 +174,7 @@ function displayMap(lat, lng ,selectedLocation) {
         });
     }
     marker.addListener('click', function () {
-        eventBusService.$emit('selectLocation', location)
+        EventBusService.$emit('selectLocation', location)
     })
 }
 
@@ -189,7 +191,6 @@ function searchLocation(searchTerm) {
         });
     })
 }
-
 function _getIcon(location) {
     switch (location) {
         case 'school':
@@ -203,8 +204,8 @@ function _getIcon(location) {
     }
 }
 
-function displaySavedLocations(status) {
-    // console.log(status)
+function displayLocations(status) {
+    console.log(status)
     if (status) {
         locations.forEach(location => {
             var marker = new google.maps.Marker({
@@ -214,14 +215,17 @@ function displaySavedLocations(status) {
                 icon: _getIcon(location.tag)
             });
             marker.addListener('click', function () {
-                eventBusService.$emit('selectLocation', location)
+                EventBusService.$emit('selectLocation', location)
             })
             // console.log('location:', location)
         });
     } else {
+        console.log('hi151')
         initMap(gCurrPosition.lat, gCurrPosition.lng);
     }
 }
+
+
 
 function saveLocation(location) {
     return new Promise((resolve, reject) => {
@@ -230,6 +234,7 @@ function saveLocation(location) {
         resolve(location);
     });
 }
+
 
 function createNewLocation(location) {
     var newLocation = _emptyLocation(location);
@@ -257,6 +262,7 @@ function _getNextId() {
     return maxId + 1;
 }
 
+
 function getLocationById(locationId) {
     return new Promise((resolve, reject) => {
         var foundLocation = locations.find(location => location.id === +locationId)
@@ -264,6 +270,69 @@ function getLocationById(locationId) {
         else reject();
     })
 }
+
+export default {
+    initMap,
+    getMap,
+    getLocations,
+    getCurrPosition,
+    searchLocation,
+    displayLocations,
+    createNewLocation,
+    getLocationById,
+    saveLocation,
+    deleteLocationChosen,
+    displayMap,
+}
+
+
+// ***********************************************************************
+
+// function search() {
+//     var searchInput = document.querySelector('.searchInput');
+
+//     if (searchInput.value) {
+//         var input = document.querySelector('.searchInput').value;
+//         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${input}&key=AIzaSyD7eT89AbQfxKhzxEKg_lah7h0MnX_9dZc`)
+//         .then(function (res) {
+//          var latUser = res.data.results[0].geometry.location.lat;   
+//          var lngUser = res.data.results[0].geometry.location.lng;   
+//         initMap(latUser, lngUser);
+//         });
+//     }
+// }
+
+
+// function showMyLocation() {
+
+//     var elLocation = document.querySelector('input').value;
+//     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${elLocation}&key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs`)
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             var lat = data.results[0].geometry.location.lat;
+//             var lng = data.results[0].geometry.location.lng;
+//             getGeoLocation(lat, lng);
+//             initMap(lat, lng)
+//         })
+// }
+
+
+// function getGeoLocation(lat, lng) {
+//     fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBmuWYnO-sINriMTx43J8ZUWho25YphaIs`)
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             var address = data.results[0].formatted_address;
+//             document.querySelector('.pst').innerText = address;
+//         })
+// }
+
+
+
+
 
 function deleteLocationChosen(locationId) {
     console.log('locationId', locationId)
@@ -276,16 +345,43 @@ function deleteLocationChosen(locationId) {
 }
 
 
-export default {
-    initMap,
-    getMap,
-    getLocations,
-    getCurrPosition,
-    searchLocation,
-    displaySavedLocations,
-    createNewLocation,
-    getLocationById,
-    saveLocation,
-    deleteLocationChosen,
-    displayMap,
-}
+
+
+// function getPosition() {
+//     if (!navigator.geolocation) {
+//         alert("HTML5 Geolocation is not supported in your browser.");
+//         return;
+//     }
+//     navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
+//     //navigator.geolocation.watchPosition(showLocation, handleLocationError);
+// }
+
+// function showLocation(position) {
+//     var date = new Date(position.timestamp);
+//     getGeoLocation(position.coords.latitude, position.coords.longitude);
+//     gLat = position.coords.latitude;
+//     gLng = position.coords.longitude;
+//     gUrl = `https://mayschil.github.io/ca-gallery-2/projects/TravelTip/index.html?lat=${gLat}&lng=${gLng} `;
+//     initMap(position.coords.latitude, position.coords.longitude);
+// }
+
+// function initMap(lat, lng) {
+//     if (!lat) lat = 32.0749831;
+//     if (!lng) lng = 34.9120554;
+
+//     var map = new google.maps.Map(
+//         document.getElementById('map'),
+//         {
+//             center: { lat: lat, lng: lng },
+//             zoom: 21
+//         }
+// );
+
+//     var image = 'oldman.png';
+//     var marker = new google.maps.Marker({
+//         position: { lat: lat, lng: lng },
+//         map: map,
+//         title: 'You Are Here!',
+//         icon: image
+//     });
+// }

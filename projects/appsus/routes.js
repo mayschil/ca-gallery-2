@@ -2,7 +2,7 @@ import homePage from './pages/homePage.js'
 import noteMain from './pages/noteMain.js'
 import noteDetailsPage from './pages/noteDetailsPage.js'
 import mapMain from './pages/mapMain.js'
-import mapLocationModal from './cmp/mapLocationModal.js'
+import mapLocationDetails from './cmp/mapLocationDetails.js'
 import mailMain from './pages/mailMain.js'
 import mailCompose from './cmp/mailCompose.js'
 import mailReply from './cmp/mailReply.js'
@@ -39,11 +39,11 @@ const routes = [
    
     {
         path: '/map/:locationId',
-        component: mapLocationModal
+        component: mapLocationDetails
     },
     {
         path: '/map/:locationId/:new',
-        component: mapLocationModal
+        component: mapLocationDetails
     },
     {
         path: '/mail/main/',

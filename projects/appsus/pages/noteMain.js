@@ -6,7 +6,7 @@ export default {
         <section>
             <navBar></navBar>
             <div class="note-container">
-                <section class="note-header">
+                <section class="app-header">
                     <button class="compose-mail-button" @click="addNote"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                     <button class="note-top-button" @click="sort('date')"><i class="fa fa-sort-amount-desc" aria-hidden="true"></i> Date</button>
                     <button class="note-top-button" @click="sort('priority')"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Priority</button>
@@ -49,13 +49,32 @@ export default {
     },
     methods: {
         deleteNote(noteId) {
-            noteService.deleteNote(noteId)
-            .then(_ => {
+            swal({
+              title: 'Are you sure?',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              noteService.deleteNote(noteId)
+              .then(_ => {
+                this.$router.push('/note/main')
+              })
+              .catch(err => {
+                console.error('Error deleting');
+              })
             })
-            .catch(err => {
-                console.error('Error deleting');                                            
-            })
-        },     
+      
+          },
+        // deleteNote(noteId) {
+        //     noteService.deleteNote(noteId)
+        //     .then(_ => {
+        //     })
+        //     .catch(err => {
+        //         console.error('Error deleting');                                            
+        //     })
+        // },     
         addNote() {
             var newNoteId = noteService.createNote();
             this.$router.push('/note/' + newNoteId)    

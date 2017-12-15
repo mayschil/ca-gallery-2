@@ -4,7 +4,7 @@ import mailDetails from '../cmp/mailDetails.js';
 import mailList from '../cmp/mailList.js';
 import mailFilter from '../cmp/mailFilter.js';
 import mailStatus from '../cmp/mailStatus.js';
-import eventBusService from '../services/eventBusService.js';
+import EventBusService from '../services/EventBusService.js';
 
 
 
@@ -85,7 +85,7 @@ export default {
                         })
                 }
 
-                eventBusService.$on('deleteMail', emailId => {
+                EventBusService.$on('deleteMail', emailId => {
                     this.deleteMail(emailId)
                 });
             })

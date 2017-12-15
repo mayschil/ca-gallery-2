@@ -9,6 +9,10 @@
     
 }
 
+.mail-search-input{
+    outline: none;
+}
+
 .head-mail{
     border-bottom: 1px dashed black;
     display: flex;

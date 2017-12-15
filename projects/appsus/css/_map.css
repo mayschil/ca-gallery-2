@@ -25,6 +25,7 @@
     width: 300px;
     /* padding: 10px; */
     margin: 10px;
+    border-radius: 15px;
 }
 
 .search-map {
@@ -41,6 +42,7 @@
 .map-control-container {
     width: 90vw;
 }
+
 
 .map-box{
     width: 90%;

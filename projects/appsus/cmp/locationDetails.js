@@ -7,7 +7,7 @@ export default {
         <section class="details-present-box">
             <i class="fa fa-times-circle-o" aria-hidden="true" @click="closeDetails"></i>
             <section class="top-section">
-                <img class="img-location" :src="'../img/locations/' + location.photo" />
+                <img class="img-location" :src="'./img/locations/' + location.photo" />
             </section>
             <section class="bottom-section">
        

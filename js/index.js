@@ -7,15 +7,12 @@ function initPage() {
     { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
     { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
     { id: 'calc', name: 'Calculator', title: 'Calculator', decs: 'Calculate as you wish' },
-    // { id: 'guessANumber', name: 'Guess the numbers', title: 'Guess the numbers', decs: 'Try your luck' },
     { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' },
     { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' },
     { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
     { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
     { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' },
-    // { id: 'travelTip', name: 'Travel Tip', title: 'Get information of your location', decs: 'location and weather info' },
-    // { id: 'myNotes', name: 'Notes', title: 'Store your To-dos and thoughts', decs: '' },
-    // { id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' }
+    { id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' }
 ];
     render();
 }

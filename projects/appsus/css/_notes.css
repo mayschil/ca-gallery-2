@@ -95,7 +95,7 @@ a {
     /* flex-direction: column; */
     text-transform: capitalize;
     font-weight: bold;
-    
+    padding-left: 50px;    
 } 
 
 .note-header > .title {

@@ -5,11 +5,17 @@
     flex-direction: column;
 }
 
+#searchTextField{
+    outline: none;
+}
 .location-detail-box{
     display: flex;
     flex-direction: row;
 }
 
+.field-description{
+width: 350px;
+}
 .map {
     height: 70vh;
     width: 50vw;

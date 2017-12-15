@@ -1,6 +1,6 @@
 import mailPreview from '../cmp/mailPreview.js'
 import mailService from '../services/mailService.js'
-import EventBusService from '../services/EventBusService.js'
+import eventBusService from '../services/eventBusService.js'
 
 
 export default {
@@ -36,16 +36,8 @@ export default {
     },
     methods: {
         emitDeleteMail(mailId) {
-            var res = swal({
-                title: 'Are you sure?',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-              }).then((result) => {
-                EventBusService.$emit('deleteMail', mailId)
-            })
+            eventBusService.$emit('deleteMail', mailId)
+            
         },
         markUnread(chosenMail) {
             chosenMail.isRead = false;
@@ -55,7 +47,7 @@ export default {
             // console.log('reply to', chosenMailId)
             this.$router.push('/mail/replyMail/' + chosenMailId)
         }
-
+    
     },
     computed: {
         timeStampToDate() {

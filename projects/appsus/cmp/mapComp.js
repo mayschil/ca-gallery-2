@@ -1,5 +1,5 @@
 import mapService from '../services/mapService.js'
-import eventBusService from '../services/eventBusService.js'
+import EventBusService from '../services/EventBusService.js'
 
 export default {
     template: `
@@ -20,7 +20,7 @@ export default {
         // this.$emit('mapLoaded')})
     },
     created() {
-        eventBusService.$on('errorMsg',msg => {
+        EventBusService.$on('errorMsg',msg => {
             this.errorMsg = msg;
         });
     }

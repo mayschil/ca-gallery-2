@@ -5,17 +5,11 @@
     flex-direction: column;
 }
 
-#searchTextField{
-    outline: none;
-}
 .location-detail-box{
     display: flex;
     flex-direction: row;
 }
 
-.field-description{
-width: 350px;
-}
 .map {
     height: 70vh;
     width: 50vw;
@@ -31,7 +25,6 @@ width: 350px;
     width: 300px;
     /* padding: 10px; */
     margin: 10px;
-    border-radius: 20px;
 }
 
 .search-map {
@@ -134,8 +127,13 @@ li{
     flex-wrap: wrap;
 }
 
+.icon-choose  input {
+    margin: 5px;
+}
 
-
+.control{
+    margin-top: 10px;
+}
 
 
 @media screen and (max-width: 480px) {

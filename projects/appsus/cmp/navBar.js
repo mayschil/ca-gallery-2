@@ -1,4 +1,4 @@
-import eventBusService from '../services/eventBusService.js'
+import EventBusService from '../services/EventBusService.js'
 import mailService from '../services/mailService.js';
 
 
@@ -28,7 +28,7 @@ export default {
         }
     },
     created() {
-        eventBusService.$on('unreadMailNotification',count => {
+        EventBusService.$on('unreadMailNotification',count => {
             this.count = count;
         });
         // When the user enter to mail app as the 1st app, there were two getMails calls, 

@@ -95,7 +95,6 @@ a {
     /* flex-direction: column; */
     text-transform: capitalize;
     font-weight: bold;
-    
 } 
 
 .note-header > .title {
@@ -229,8 +228,10 @@ a {
         padding: 0;
     }
 
-    .note-header{
-        width: 90%;        
+    .app-header{
+        width: 70%;
+        padding-left: 21px;
+        
     }
 
     .note-container{

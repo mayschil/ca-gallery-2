@@ -1,4 +1,4 @@
-import eventBusService from '../services/eventBusService.js'
+import EventBusService from '../services/EventBusService.js'
 import mapService from '../services/mapService.js';
 import navBar from '../cmp/navBar.js';
 import mapComp from '../cmp/mapComp.js';
@@ -42,8 +42,8 @@ export default {
     },
     created() {
         mapService.getCurrPosition();
-        eventBusService.$on('selectLocation', location => {
-            // console.log(location)
+        EventBusService.$on('selectLocation', location => {
+            console.log(location)
             this.chosenLocation = location;
             this.selectedLocation = this.chosenLocation.selectedLocation;
             if (this.selectedLocation === undefined) {
@@ -53,7 +53,7 @@ export default {
             }
             else  mapService.displayMap(this.chosenLocation.lat, this.chosenLocation.lng, this.selectedLocation);
         })
-        eventBusService.$on('defaultLocation', location => {
+        EventBusService.$on('defaultLocation', location => {
             this.chosenLocation = location;
             this.selectedLocation = this.chosenLocation;
         })
@@ -65,19 +65,19 @@ export default {
     },
     methods: {
         closeDetails(event) {
-            // console.log('closing', event)
+            console.log('closing', event)
             this.openDetails = !this.openDetails;
-            // console.log(this.openDetails)
+            console.log(this.openDetails)
         },
         showDetails(location) {
-            // console.log('location', location)
+            console.log('location', location)
             this.openDetails = true;
             this.selectedLocation = location;
             mapService.displayMap(location.lat, location.lng, this.selectedLocation);
         },
         mapLoaded() {
             this.map = mapService.getMap();
-            // console.log('this map:', this.map);
+            console.log('this map:', this.map);
         },
         searchLocation(searchTerm) {
             mapService.searchLocation(searchTerm)
@@ -87,8 +87,8 @@ export default {
                 })
         },
         displaySavedLocations(status) {
-            // console.log('status', status)
-            mapService.displaySavedLocations(status);
+            console.log('status', status)
+            mapService.displayLocations(status);
         },
         addLocation() {
             // console.log('add location', this.chosenLocation) 

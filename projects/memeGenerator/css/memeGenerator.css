@@ -1,4 +1,6 @@
-
+#download{
+    cursor: pointer;
+}
 .memeGenerator {
     display: flex;
     flex-wrap:wrap;

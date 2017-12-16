@@ -37,28 +37,28 @@ var gMeme = {
     }]
 };
 
-var imageLoader = document.querySelector('.img-url');
-console.log('imageLoader',imageLoader)
-imageLoader.addEventListener('change', handleImage, false);
+// var imageLoader = document.querySelector('.img-url');
+// console.log('imageLoader',imageLoader)
+// imageLoader.addEventListener('change', handleImage, false);
 
 
-function handleImage(e){
-    console.log('im here')
-    var reader = new FileReader();
-    reader.onload = function(event){
-        var img = new Image();
-        img.src = event.target.result;
-        console.log(' img.src', img.src)
-        img.onload = function(){
-            gCanvas.width = img.width;
-            gCanvas.height = img.height;
-            gCtx.drawImage(img,0,0,gCanvas.width,gCanvas.height);
-            // setGMeme();
-            gMeme.elImg = img;
-        }
-    }    
-    reader.readAsDataURL(e.target.files[0]);   
-}
+// function handleImage(e){
+//     console.log('im here')
+//     var reader = new FileReader();
+//     reader.onload = function(event){
+//         var img = new Image();
+//         img.src = event.target.result;
+//         console.log(' img.src', img.src)
+//         img.onload = function(){
+//             gCanvas.width = img.width;
+//             gCanvas.height = img.height;
+//             gCtx.drawImage(img,0,0,gCanvas.width,gCanvas.height);
+//             // setGMeme();
+//             gMeme.elImg = img;
+//         }
+//     }    
+//     reader.readAsDataURL(e.target.files[0]);   
+// }
 
 
 

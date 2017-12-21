@@ -28,7 +28,7 @@ function getGalleryHtml() {
     for (var i = 0; i < gProj.length; i++) {
         var str = '';
         var sum = i + 1;
-        str += '<div class="col-md-4 col-sm-6 portfolio-item">ca-gallery-2'
+        str += '<div class="col-md-4 col-sm-6 portfolio-item">'
         str += ' <a class="portfolio-link" data-toggle="modal" href="#portfolioModal' + sum + '"> '
         str += ' <div class="portfolio-hover"> '
         str += ' <div class="portfolio-hover-content"> '
@@ -66,9 +66,6 @@ function getModalHtml() {
         str += '  <img class="img-fluid" src="img/portfolio/' + gProj[i].id + '-full.jpg" >'
         str += '   <p>' + gProj[i].decs + '</p>'
         str += '   <ul class="list-inline">'
-        // str += '     <li>Date: January 2017</li>'
-        // str += '     <li>Client: Threads</li>'
-        // str += '     <li>Category: Il/lustration</li>'
         str += '     <li ><a href="projects/'+ gProj[i].id +'/index.html">Press and play</a></li>'
         str += '   </ul>'
         str += '   <button class="btn btn-primary" data-dismiss="modal" type="button">'

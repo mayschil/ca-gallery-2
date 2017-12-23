@@ -32,7 +32,7 @@ function arithmetic(oper) {
         
         case '=':
             if (gOper === '+') { 
-                gResult = (+gNum1) + (+gNum2);      // easier to read with ();
+                gResult = (+gNum1) + (+gNum2);     
             } else if (gOper === '-') {
                 gResult = (+gNum1) - (+gNum2);
             } else if (gOper === '*') {
@@ -40,7 +40,7 @@ function arithmetic(oper) {
             } else if (gOper === '/') {
                 gResult = (+gNum1) / (+gNum2);
             }
-            
+            console.log(gResult)
             gElScreen.innerHTML = gResult; 
             gNum1 = gResult;      
     }

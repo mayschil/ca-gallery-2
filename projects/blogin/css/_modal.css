@@ -25,6 +25,8 @@ body{
 }
 .input-modal{
     display: inline;
+	border-radius: 15px;
+    padding: 5px;
 }
 
 .join{

@@ -49,3 +49,11 @@ button{
   padding: 50px;
   
 }
+
+.btn-success ,.btn-danger{
+  border-radius:15px;
+}
+
+.col-sm-10{
+  margin-left: 10%;
+}

@@ -2,16 +2,16 @@ var gProj = [];
 
 function initPage() {
 
-    gProj = [{ id: 'simonSays', name: 'Simon Says', title: 'Memory Game', decs: 'Repeat the order of the selected colors' },
-    { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: 'Find where the mines are' },
-    { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: 'Select the numbers by the right order' },
-    { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: 'Pop those balloons' },
-    { id: 'calc', name: 'Calculator', title: 'Calculator', decs: 'Calculate as you wish' },
-    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: 'So many books must me organize' },
-    { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: 'Lets see how well you know me' },
-    { id: 'blogin', name: 'My first page', title: 'Sample', decs: 'Web page' },
-    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: 'generate meme' },
-    { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: 'listen to your favorite music' },
+    gProj = [{ id: 'simonSays', name: 'Simon Says', title: 'Memory Game', decs: '' },
+    { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: '' },
+    { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: '' },
+    { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: '' },
+    { id: 'calc', name: 'Calculator', title: 'Calculator', decs: '' },
+    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: '' },
+    { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: '' },
+    { id: 'blogin', name: 'My first page', title: 'Sample', decs: '' },
+    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: '' },
+    { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: '' },
     { id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' }
 ];
     render();

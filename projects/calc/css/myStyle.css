@@ -58,9 +58,9 @@ table{
     /* margin-top:100px; */
 }
 
-#sqrt:after {
+/* #sqrt:after {
     content: ' \221A';
-}
+} */
 
 form{
     display: flex;

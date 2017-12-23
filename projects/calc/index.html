@@ -14,7 +14,7 @@
         <div class="box">
         <table>
             <tr>
-                <td id="screen" colspan="5" class="btn-screen"></td>
+                <td class="screen" colspan="5" class="btn-screen"></td>
             </tr>
             <tr>
                 <td> <button onclick="clearMemory(this)" type="button" class="btn btn-outline-info">MC</button> </td>
@@ -25,44 +25,42 @@
 
             </tr>
             <tr>
-                <td> <button onclick="deleteNum()" type="button" class="btn btn-outline-info"> delete </button></td>
-                <td> <button onclick="clearNum()" type="button" class="btn btn-outline-info">CE</button> </td>
-                <td> <button onclick="clearNum()" type="button" class="btn btn-outline-info">C</button> </td>
-                <td><button onclick="pow()" type="button" class="btn btn-outline-info">^</button> </td>
-                <td><button id="sqrt" onclick="root()" type="button" class="btn btn-outline-info"></button> </td>
+                <!-- <td> <button onclick="clearNum()" type="button" class="btn btn-outline-info">CE</button> </td> -->
+                <!-- <td><button onclick="pow()" type="button" class="btn btn-outline-info">^</button> </td> -->
+                <!-- <td><button id="sqrt" onclick="root()" type="button" class="btn btn-outline-info"></button> </td> -->
             </tr>
             <tr>
-                <td> <button id="num-7" onclick="addDigit(this)" type="button" class="btn btn-outline-info">7</button></td>
-                <td> <button id="num-8" onclick="addDigit(this)" type="button" class="btn btn-outline-info">8</button></td>
-                <td> <button id="num-9" onclick="addDigit(this)" type="button" class="btn btn-outline-info">9</button></td>
+                <td> <button id="num-7" onclick="addDigit('7')" type="button" class="btn btn-outline-info">7</button></td>
+                <td> <button id="num-8" onclick="addDigit('8')" type="button" class="btn btn-outline-info">8</button></td>
+                <td> <button id="num-9" onclick="addDigit('9')" type="button" class="btn btn-outline-info">9</button></td>
                 <td> <button onclick="div()" class="btn btn-outline-info">/</button> </td>
-                <td> <button onclick="div()" class="btn btn-outline-info">%</button></td>
+                <td> <button onclick="clearNum()" type="button" class="btn btn-outline-info">C</button> </td>
             </tr>
             <tr>
-                <td> <button id="num-4" onclick="addDigit(this)" type="button" class="btn btn-outline-info">4</button></td>
-                <td> <button id="num-5" onclick="addDigit(this)" type="button" class="btn btn-outline-info">5</button></td>
-                <td> <button id="num-6" onclick="addDigit(this)" type="button" class="btn btn-outline-info">6</button> </td>
-                <td> <button onclick="mult()" class="btn btn-outline-info">*</button> </td>
-                <td> <button onclick="mult()" class="btn btn-outline-info">1/x</button></td>
+                <td> <button id="num-4" onclick="addDigit('4')" type="button" class="btn btn-outline-info">4</button></td>
+                <td> <button id="num-5" onclick="addDigit('5')" type="button" class="btn btn-outline-info">5</button></td>
+                <td> <button id="num-6" onclick="addDigit('6')" type="button" class="btn btn-outline-info">6</button> </td>
+                <td> <button onclick="arithmetic('*')" class="btn btn-outline-info">*</button> </td>
+                <td> <button onclick="del()" type="button" class="btn btn-outline-info"> delete </button></td>
             </tr>
             <tr>
-                <td> <button id="num-1" onclick="addDigit(this)" type="button" class="btn btn-outline-info">1</button>
+                <td> <button id="num-1" onclick="addDigit('1')" type="button" class="btn btn-outline-info">1</button>
                 </td>
-                <td> <button id="num-2" onclick="addDigit(this)" type="button" class="btn btn-outline-info">2</button>
+                <td> <button id="num-2" onclick="addDigit('2')" type="button" class="btn btn-outline-info">2</button>
                 </td>
-                <td> <button id="num-3" onclick="addDigit(this)" type="button" class="btn btn-outline-info">3</button>
+                <td> <button id="num-3" onclick="addDigit('3')" type="button" class="btn btn-outline-info">3</button>
                 </td>
-                <td> <button onclick="subs()" class="btn btn-outline-info">-</button>
+                <td> <button onclick="arithmetic('-')" class="btn btn-outline-info">-</button>
                 </td>
 
-                <td rowspan="3"> <button id="equal" onclick="equal()" class="btn btn-outline-info">=</button>
+                <td rowspan="3"> <button id="equal" onclick="arithmetic('=')" class="btn btn-outline-info">=</button>
                 </td>
 
             </tr>
             <tr>
-                <td colspan="2"> <button id="num-0" data-num="1" onclick="addDigit(this)" type="button" class="btn btn-outline-info">0</button></td>
-                <td> <button onclick="decP()" type="button" class="btn btn-outline-info">.</button></td>
-                <td> <button onclick="sum()" class="btn btn-outline-info">+</button>
+                <td colspan="2"> <button id="num-0" data-num="1" onclick="addDigit('0')" type="button" class="btn btn-outline-info">0</button></td>
+                <td> <button onclick="addDigit('.')" type="button" class="btn btn-outline-info">.</button></td>
+                <td> <button onclick="arithmetic('+')" class="btn btn-outline-info">+</button>
                 </td>
 
             </tr>

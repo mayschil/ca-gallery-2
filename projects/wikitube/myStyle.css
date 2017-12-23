@@ -17,8 +17,15 @@ input{
     width: 234px;
 }
 
+.search-img{
+    cursor: pointer;
+}
 button{
     height:40px;
+}
+
+.titel1{
+    cursor: pointer;
 }
 .head-div{
     width:100%;

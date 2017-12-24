@@ -48,7 +48,11 @@ function cellClicked(elCell) {
         var color = colorSamples.splice(0, 1);
     }
         
-    else console.log('YOU ARE WRONG - TRY AGAIN');
+    else{
+        var elHead = document.querySelector('h1');
+        alert('TRY AGAIN')
+    }
+         
     if (colorSamples.length === 0) {
         console.log('YOU ARE CORRECT IN ALL TIMES');
         gTurn++;

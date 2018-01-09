@@ -120,3 +120,28 @@
 </body>
 
 </html>
+
+
+app.get('/data/items/:id', function (req, res) {
+	const objType = 'order';
+	const id = req.params.id;
+
+	dbConnect().then(db => {
+		const collection = db.collection(objType);
+
+		collection.find({ id: seller } ).toArray((err, objs) => {
+			if (err) {
+				cl('Cannot get you a list of ', err)
+				res.json(404, { error: 'not found' })
+			} else {
+				cl('Returning list of ' + objs.length + ' ' + objType + 's');
+				console.log(objs);
+				res.json(objs);
+			}
+			db.close();
+		});
+	});
+});
+
+
+.get(`${URL}/data/items/`+id)

@@ -2,18 +2,19 @@ var gProj = [];
 
 function initPage() {
 
-    gProj = [{ id: 'simonSays', name: 'Simon Says', title: 'Memory Game', decs: '' },
-    { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: '' },
-    { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: '' },
-    { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: '' },
-    { id: 'calc', name: 'Calculator', title: 'Calculator', decs: '' },
-    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: '' },
-    { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: '' },
-    { id: 'blogin', name: 'My first page', title: 'Sample', decs: '' },
-    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: '' },
+    gProj = [{ id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' },
     { id: 'wikitube', name: 'WikiTube', title: 'Be connected to music', decs: '' },
-    { id: 'appsus', name: 'Appsus', title: 'Three great apps', decs: '' }
-];
+    { id: 'memeGenerator', name: 'The Meme Generator', title: 'Make your own meme', decs: '' },
+    { id: 'blogin', name: 'My first page', title: 'Sample', decs: '' },
+    { id: 'guessMe', name: 'Guess me', title: 'Search my mind', decs: '' },
+    { id: 'bookstore', name: 'Search My Bookstore', title: 'Search My Bookstore', decs: '' },
+    { id: 'touchNum', name: 'Touch The Numbers', title: 'Touch Nums', decs: '' },
+    { id: 'minesweeper', name: 'Minesweeper', title: 'Minesweeper', decs: '' },
+    { id: 'simonSays', name: 'Simon Says', title: 'Memory Game', decs: '' },
+    { id: 'calc', name: 'Calculator', title: 'Calculator', decs: '' },
+    { id: 'balloon', name: 'PopBalloons', title: 'Pop Balloons', decs: '' },
+
+    ];
     render();
 }
 
@@ -66,7 +67,7 @@ function getModalHtml() {
         str += '  <img class="img-fluid" src="img/portfolio/' + gProj[i].id + '-full.jpg" >'
         str += '   <p>' + gProj[i].decs + '</p>'
         str += '   <ul class="list-inline">'
-        str += '     <li ><a href="projects/'+ gProj[i].id +'/index.html">Press and play</a></li>'
+        str += '     <li ><a href="projects/' + gProj[i].id + '/index.html">Press and play</a></li>'
         str += '   </ul>'
         str += '   <button class="btn btn-primary" data-dismiss="modal" type="button">'
         str += '       <i class="fa fa-times"></i>'
@@ -88,41 +89,41 @@ function getModalHtml() {
 
 function contactForm() {
 
-var str='';
+    var str = '';
 
-str+='<form>'
-str+='<div class="form-group">'
-str+='<label for="exampleInputEmail1">Email address</label>'
-str+='<input id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">'
-str+='<small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else.</small>'
-str+=' </div>'
+    str += '<form>'
+    str += '<div class="form-group">'
+    str += '<label for="exampleInputEmail1">Email address</label>'
+    str += '<input id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">'
+    str += '<small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else.</small>'
+    str += ' </div>'
 
-str+='<div class="form-group">'
-str+='<label for="exampleInputSubject">Subject</label>'
-str+='<input id="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">'
+    str += '<div class="form-group">'
+    str += '<label for="exampleInputSubject">Subject</label>'
+    str += '<input id="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">'
 
-str+=' <div class="form-group">'
-str+='   <label class="col-form-label" for="formGroupExampleInput">Body</label>'
-str+='  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Body">'
-str+=' </div>'
+    str += ' <div class="form-group">'
+    str += '   <label class="col-form-label" for="formGroupExampleInput">Body</label>'
+    str += '  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Body">'
+    str += ' </div>'
 
-str+='<div class="form-check">'
-str+='<label class="form-check-label">'
-str+=' <input type="checkbox" class="form-check-input">'
-str+=' Check me out'
-str+='</label>'
-str+='</div>'
-str+='<button type="button" class="btn btn-primary" onclick="submitMail()">Submit</button>'
-str+='</form>'
+    str += '<div class="form-check">'
+    str += '<label class="form-check-label">'
+    str += ' <input type="checkbox" class="form-check-input">'
+    str += ' Check me out'
+    str += '</label>'
+    str += '</div>'
+    str += '<button type="button" class="btn btn-primary" onclick="submitMail()">Submit</button>'
+    str += '</form>'
 
-var elContact = document.querySelector('#contact');
-elContact.innerHTML = str;
+    var elContact = document.querySelector('#contact');
+    elContact.innerHTML = str;
 }
 
 
 
 
-function submitMail(){
+function submitMail() {
     var elMail = document.querySelector('#email');
     var mail = elMail.value;
     console.log(mail)
@@ -132,5 +133,5 @@ function submitMail(){
     var elTxt = document.querySelector('#formGroupExampleInput');
     var text = elTxt.value;
     console.log(text)
-    location = 'https://mail.google.com/mail/?view=cm&fs=1&to='+mail+'&su='+subject+'&body='+text+' ';
+    location = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + mail + '&su=' + subject + '&body=' + text + ' ';
 }
